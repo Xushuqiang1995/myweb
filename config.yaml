@@ -1,5 +1,5 @@
 baseurl: https://shuqiang.netlify.app/
-title: Test Blog
+title: Shuqiang Blog
 theme: hugo-theme-cleanwhite
 languageCode: zh-cn
 disqusShortname: ''
@@ -53,9 +53,9 @@ params:
   disqus_site: ''
   featured_condition_size: 1
   featured_tags: yes
-  friend_link:
-    - href: https://zhaozhihan.com
-      title: Linda的博客
+  # friend_link:
+  #   - href: https://zhaozhihan.com
+  #     title: Linda的博客
   friends: yes
   header_image: img/home-bg-jeep.jpg
   image_404: img/404-bg.jpg
@@ -68,14 +68,15 @@ params:
   reward: yes
   sidebar_about_description: Software Developer, Open Source Enthusiast and Life Adventurer
   sidebar_avatar: img/zhaohuabing.png
-  slogan: 路在脚下，心向远方
+  slogan: 不要浪费生命，时间在滴答
+  # slogan: 路在脚下，心向远方
   social:
-    email: youremail@gmail.com
-    github: https://github.com/yourgithub
-    linkedin: https://www.linkedin.com/in/yourlinkedinid
+    email: 806135661@qq.com
+    github: https://github.com/Xushuqiang1995
+    # linkedin: https://www.linkedin.com/in/yourlinkedinid
     rss: yes
     stackoverflow: https://stackoverflow.com/users/yourstackoverflowid
-    wechat: your wechat qr code image
+    wechat: 18817299506
   title_404: 你来到了没有知识的荒原 :(
   twikoo_env_id: ''
 outputFormats:
