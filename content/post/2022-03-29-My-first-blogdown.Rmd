@@ -1,10 +1,17 @@
 ---
+URL: /2022/03/29/My-first-blogdown/
 title: "Blogdown Basic Configuration[^1][^4]"
-author: "Shuqiang"
+subtitle: 来自Istio的儿童节礼物
 date: "2022/3/29"
+author: "Shuqiang"
 
-categories: ["R"]
-tags: ["R Markdown", "plot", "regression"]
+layout: post
+published: true
+
+categories:
+- Tech
+tags:
+- Istio
 
 # output:
 #   prettydoc::html_pretty:
