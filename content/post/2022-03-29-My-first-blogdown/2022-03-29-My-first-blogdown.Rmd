@@ -1,6 +1,6 @@
 ---
 # URL: /2022/03/29/My-first-blogdown/
-title: "Blogdown Basic Configuration[^1][^4]"
+title: "Blogdown Basic Configuration"
 date: 2022-03-21T21:13:14-05:00
 author: "Shuqiang"
 
@@ -13,9 +13,8 @@ tags: ["blogdown"]
 knitr::opts_chunk$set(echo = TRUE)
 
 ```
-
-Prequare : github/netlify account/RStudio download 'blogdown' and 'hugo' information
-整篇文章通过Rmardown编写[^2]
+准备工作 : github/netlify account/RStudio download 'blogdown' and 'hugo' information
+整篇文章通过Rmardown编写[^1]
 
 ### 1. Github and RStudio 初始化环境配置
 
@@ -65,7 +64,7 @@ git add -A # 所有本地website文件同步至github
 
 # ---------------------------------------------------------------------
 ### 3. 配置netlify
-  1. 打开Netlify网页并通过github登录[^3]
+  1. 打开Netlify网页并通过github登录[^2]
   2. Add New Site > Import Exsiting Project > 选择github > 通过授权选择对应的website repository > Show Advanced > New Varible 输入hugo version对应信息 > Deploy(部署)
   3. 页面上方可看到你的个人网页链接，然后可以选择change site name
   4. 成功部署[个人博客](https://shuqiang.netlify.app/)
@@ -86,9 +85,9 @@ _参考文献_
 - [Cheat Sheet](https://www.rstudio.com/resources/cheatsheets/)
 - [Tidymodels](https://www.tidymodels.org/)
 - [themes/cayman-hugo-theme](https://themes.gohugo.io/themes/cayman-hugo-theme/)
+- [B站blogdown教学](https://www.bilibili.com/video/BV1gL411A71J/?spm_id_from=333.788)
+- [参考网址](https://pzhao.org/zh/post/r-blogdown/)
 
-[^1]: https://www.bilibili.com/video/BV1gL411A71J/?spm_id_from=333.788
-[^2]: [Rmakdown官方教程](https://markdown.com.cn/)
-[^3]: [Netlify官网](https://app.netlify.com/)
-[^4]: https://pzhao.org/zh/post/r-blogdown/
+[^1]: [Rmakdown官方教程](https://markdown.com.cn/)
+[^2]: [Netlify官网](https://app.netlify.com/)
 
