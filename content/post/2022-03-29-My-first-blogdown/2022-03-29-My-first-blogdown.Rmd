@@ -1,7 +1,7 @@
 ---
 # URL: /2022/03/29/My-first-blogdown/
 title: "Blogdown Basic Configuration[^1][^4]"
-date: "2022/3/29"
+date: 2022-03-21T21:13:14-05:00
 author: "Shuqiang"
 
 categories: ["R"]
