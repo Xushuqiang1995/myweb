@@ -1,22 +1,12 @@
 ---
-URL: /2022/03/29/My-first-blogdown/
+# URL: /2022/03/29/My-first-blogdown/
 title: "Blogdown Basic Configuration[^1][^4]"
-subtitle: 来自Istio的儿童节礼物
 date: "2022/3/29"
 author: "Shuqiang"
 
-layout: post
-published: true
+categories: ["R"]
+tags: ["blogdown"]
 
-categories:
-- Tech
-tags:
-- Istio
-
-# output:
-#   prettydoc::html_pretty:
-#     theme: cayman
-#     highlight: github
 ---
 
 ```{r setup, include=FALSE}
