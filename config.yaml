@@ -1,7 +1,7 @@
 baseurl: https://shuqiang.netlify.app/
-title: Huabing Blog
+title: Shuqiang Blog
 theme: hugo-theme-cleanwhite
-languageCode: en-us
+languageCode: zh-cn
 disqusShortname: ''
 googleAnalytics: ''
 preserveTaxonomyNames: yes
