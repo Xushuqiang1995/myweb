@@ -1,6 +1,6 @@
 ---
 # URL: /2022/03/29/My-first-blogdown/
-title: "Blogdown Basic Configuration"
+title: "blogdown搭建个人博客"
 date: 2022-03-21T21:13:14-05:00
 author: "Shuqiang"
 
