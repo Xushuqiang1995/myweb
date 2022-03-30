@@ -68,9 +68,10 @@ git merge <branch>
 
 ```
 
-
-参考文献
+--------------------------------------------------------------------------
+_参考文献_
 
 - https://cloud.tencent.com/developer/article/1865750?from=article.detail.1938212)
 - https://www.cnblogs.com/jinzhaozhao/p/10012504.html
 - [github使用ssh密钥的好处与原因](https://blog.csdn.net/love_fdu_llp/article/details/38752365)
+- [廖雪峰git教学](https://www.cnblogs.com/jinzhaozhao/p/10012504.html)
