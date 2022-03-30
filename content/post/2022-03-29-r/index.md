@@ -7,12 +7,16 @@ categories:
   - R
 tags:
   - blogdown
+  - ggplot2
 subtitle: ''
 description: ''
 image: ''
 ---
+
+12：05
 一切都是这么的顺风顺水，你觉得真这就是啊简单的一一切吗？
 我希望你在未来能够认真的对待你自己
+
 
 ```
 git init 新建一个空的仓库

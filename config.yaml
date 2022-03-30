@@ -13,7 +13,7 @@ outputs:
     - RSS
     - Algolia
 params:
-  SEOTitle: 赵化冰的博客 | Zhaohuabing Blog
+  SEOTitle: Shuqiang的博客 | Shuqiang Blog
   about_me: yes
   addtional_menus:
     - href: /top/books/
