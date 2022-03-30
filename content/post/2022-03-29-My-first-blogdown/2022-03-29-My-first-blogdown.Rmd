@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 准备工作 : github/netlify account/RStudio download 'blogdown' and 'hugo' information
 整篇文章通过Rmardown编写[^1]
 
-### 1. Github and RStudio 初始化环境配置
+### Github and RStudio 初始化环境配置
 
   1. 打开github账号创建新的public repository，命名为 ‘website’, 复制repository的链接。
   2. 使用RStudio，打开新建项目，选择version control，然后黏贴github链接及选择在本地文件夹存储位置。至此，RStudio工作路径已在‘website’文件夹下
@@ -50,7 +50,7 @@ check_content()
 # 至此，我们的project都为website
 ```
 
-### 2. RStudio通过shell控制github版本
+### RStudio通过shell控制github版本
   1. Tools > shell
   2. shell配置
 ```{r eval=FALSE, message=TRUE}
@@ -62,8 +62,7 @@ git add -A # 所有本地website文件同步至github
   4. 点击绿色Push提交，得到 HEAD -> main反馈，可以去github下查看是否更新  
 
 
-# ---------------------------------------------------------------------
-### 3. 配置netlify
+### 配置netlify
   1. 打开Netlify网页并通过github登录[^2]
   2. Add New Site > Import Exsiting Project > 选择github > 通过授权选择对应的website repository > Show Advanced > New Varible 输入hugo version对应信息 > Deploy(部署)
   3. 页面上方可看到你的个人网页链接，然后可以选择change site name
@@ -79,6 +78,11 @@ git config --global --unset https.proxy
 ```
 
 
+### 新建blog
+  打开RStudio > Addins > New post > 填写blog信息 > 纯文本就选择md文件，需要运行R代码并显示结果，则选择rmd文件
+  
+  
+  
 _参考文献_
 
 - [Rmarkdown](http://rmarkdown.rstudio.com/index.html)

@@ -14,7 +14,7 @@ tags: ["blogdown"]
 <p>准备工作 : github/netlify account/RStudio download ‘blogdown’ and ‘hugo’ information
 整篇文章通过Rmardown编写<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
 <div id="github-and-rstudio-初始化环境配置" class="section level3">
-<h3>1. Github and RStudio 初始化环境配置</h3>
+<h3>Github and RStudio 初始化环境配置</h3>
 <ol style="list-style-type: decimal">
 <li>打开github账号创建新的public repository，命名为 ‘website’, 复制repository的链接。</li>
 <li>使用RStudio，打开新建项目，选择version control，然后黏贴github链接及选择在本地文件夹存储位置。至此，RStudio工作路径已在‘website’文件夹下</li>
@@ -46,7 +46,7 @@ check_content()
 # 至此，我们的project都为website</code></pre>
 </div>
 <div id="rstudio通过shell控制github版本" class="section level3">
-<h3>2. RStudio通过shell控制github版本</h3>
+<h3>RStudio通过shell控制github版本</h3>
 <ol style="list-style-type: decimal">
 <li>Tools &gt; shell</li>
 <li>shell配置</li>
@@ -59,10 +59,8 @@ git add -A # 所有本地website文件同步至github</code></pre>
 <li>点击绿色Push提交，得到 HEAD -&gt; main反馈，可以去github下查看是否更新</li>
 </ol>
 </div>
-<div id="section" class="section level1">
-<h1>———————————————————————</h1>
 <div id="配置netlify" class="section level3">
-<h3>3. 配置netlify</h3>
+<h3>配置netlify</h3>
 <ol style="list-style-type: decimal">
 <li>打开Netlify网页并通过github登录<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></li>
 <li>Add New Site &gt; Import Exsiting Project &gt; 选择github &gt; 通过授权选择对应的website repository &gt; Show Advanced &gt; New Varible 输入hugo version对应信息 &gt; Deploy(部署)</li>
@@ -76,6 +74,10 @@ git config --global --unset http.proxy
 # 取消https代理 
 git config --global --unset https.proxy
 # 参考：https://blog.csdn.net/good_good_xiu/article/details/118567249</code></pre>
+</div>
+<div id="新建blog" class="section level3">
+<h3>新建blog</h3>
+<p>打开RStudio &gt; Addins &gt; New post &gt; 填写blog信息 &gt; 纯文本就选择md文件，需要运行R代码并显示结果，则选择rmd文件</p>
 <p><em>参考文献</em></p>
 <ul>
 <li><a href="http://rmarkdown.rstudio.com/index.html">Rmarkdown</a></li>
@@ -85,7 +87,6 @@ git config --global --unset https.proxy
 <li><a href="https://www.bilibili.com/video/BV1gL411A71J/?spm_id_from=333.788">B站blogdown教学</a></li>
 <li><a href="https://pzhao.org/zh/post/r-blogdown/">参考网址</a></li>
 </ul>
-</div>
 </div>
 <div class="footnotes footnotes-end-of-document">
 <hr />
