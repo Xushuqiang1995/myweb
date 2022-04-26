@@ -1,0 +1,28 @@
+---
+title: Bio Resource
+author: Shuqiang
+date: '2022-04-25'
+slug: []
+categories:
+  - Bio
+tags:
+  - Bio
+  - Programing
+subtitle: ''
+description: '介绍生物信息相关资料'
+image: ''
+---
+
+- [生信常用网站导航](https://gwaslab.com/navigation/)
+
+- [生信编程框架](https://gwaslab.com/programming/)
+
+- []()
+
+[]()
+
+[]()
+
+[]()
+
+[]()

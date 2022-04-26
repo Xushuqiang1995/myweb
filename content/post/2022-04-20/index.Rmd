@@ -1,0 +1,32 @@
+---
+title: 常用资料
+author: Shuqiang
+date: '2022-04-26'
+slug: []
+categories:
+  - resource
+tags:
+  - tag1
+  - tag2
+subtitle: ''
+description: ''
+image: ''
+---
+
+好滴 ~ 谢谢 ~ 那我感觉自己还需要再补充些shiny开发的知识、生信分析流程掌握；
+
+- [鸠摩电子书下载](https://www.jiumodiary.com/)
+
+- [全球最大的数字图书馆：Z-library](https://pangniao.net/z-library-zui-xin-di-zhi.html)
+
+- [Bookdown开放书籍](https://bookdown.org)
+
+- []()
+
+- []()
+
+- []()
+
+- []()
+
+

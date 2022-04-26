@@ -1,0 +1,86 @@
+---
+title: tidymodels(二.核心包实例)
+author: Shuqiang
+date: '2022-04-26'
+slug: []
+categories:
+  - R
+tags:
+  - tidymodels
+subtitle: ''
+description: 'tidymodels中核心包的应用，达到熟悉使用的目的。主要包括package中的函数、参数介绍及应用'
+image: ''
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache = TRUE, warning = FALSE,
+                      message = FALSE, echo = TRUE, 
+                      dpi = 180, fig.width = 8, fig.height = 5)
+library(tidymodels)
+library(tidyverse)
+library(devtools)
+library("silgelib") ## 
+theme_set(theme_plex())
+```
+
+### [**1. rsample package**](https://rsample.tidymodels.org/reference/index.html)：
+  随机抽样、分层抽样、K折交叉验证分样本、重采样等方式。函数介绍主要在链接的reference中。
+  
+  - 主要函数介绍
+  - initial_split()/initial_time_split()/training()/testing()
+    - 数据集划分为训练集和测试集
+    - data: 数据集
+    - prop: 抽样比例，分别用来建立模型和分析评估
+    - strata: 分层抽样变量
+    - pool: 分层中数量较少的样本是否并入其他层
+    - lag: 包含滞后项？
+    
+```{r}
+library(rsample)
+set.seed(123)
+car_split <- initial_split(data = mtcars, prop = 3/4, strata = am)
+sample_train <- training(car_split)
+sample_test <- testing(car_split)
+head(sample_train);  head(sample_test)
+```
+    
+  - vfold_cv(data, v = 10, repeats = 1, strata = NULL, breaks = 4, pool = 0.1, ...)
+    - K折交叉验证采样
+    - v: 样本分成多少份
+    - repeat: 重复V折的次数
+```{r}
+set.seed(123)
+vfold_cv(mtcars, v = 10) %>% head(4)
+vfold_cv(mtcars, v = 10, repeats = 2) %>% head(4)
+```
+  - bootstraps(data, times = 25, strata = NULL, breaks = 4, pool = 0.1, apparent = FALSE, ...)
+  
+    - 有放回的重复采样
+```{r}
+set.seed(12)
+bootstraps(mtcars, times = 2)
+```
+  - 
+  - 
+
+
+```{r}
+set.seed(123)
+bt_resamples <- bootstraps(mtcars, times = 3)
+bt_resamples
+```
+
+```{r}
+first_resample <- bt_resamples$splits[[1]]
+first_resample
+```
+
+```{r}
+## 数据分析集
+as.data.frame(first_resample) %>% head()
+## 数据评估集
+as.data.frame(first_resample, data = "assessment")
+## 或者用下列方式
+# analysis(first_resample)
+# assessment(first_resample)
+```
+

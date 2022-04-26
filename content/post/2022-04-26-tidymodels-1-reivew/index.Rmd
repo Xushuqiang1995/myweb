@@ -1,0 +1,104 @@
+---
+title: tidymodels(一.概要)
+author: Shuqiang
+date: '2022-04-26'
+slug: []
+categories:
+  - R
+tags:
+  - tidymodels
+description: 'R tidymodels框架做机器学习，介绍该框架下的包内容'
+---
+在统计软件R中，用来做机器学习的包主要有2个框架，分别是tidymodels和mlr3包，集成了数据处理（特征工程）、构建模型、模型评价模型选择等丰富的工程。本节主要介绍tidymodels下的框架内容
+
+### tidymodels内容概要
+核心package
+
+1. **rsample   **package:将数据拆分为训练集、测试集；以及K折交叉验证中的分样本。
+
+2. **parsnip   **package:在构建模型的时候，同一个模型可能有不同的包可以使用，其中的参数设定也各不相同。例如随机森林模型，有randomForest::randomForest/ ranger::ranger/ Sparklyr::ml_random_forest，函数的名称和参数各不相同，在这里将一类模型整合，然后通过设置
+
+    - type:     选择模型，eg. 'random forest'
+    - mode:     选择模型目的，即回归、分类等。eg.regression/classificatoin, etc
+    - engine:   选择引擎，即选择哪个包来执行，参数为包的名称。eg. ranger/Sparklyr/randomForest
+    
+3. **recipes   **package: 是一个数据预处理器，
+
+4. **workflows **package: 
+
+5. **tune      **package: 
+
+6. **yardstick **package: 
+
+7. **broom     **package: 
+
+8. **dials     **package: 
+
+[*额外package*](https://www.tidymodels.org/packages/)
+
+1.统计分析：
+
+  - infer package:
+  
+  - corrr package:
+  
+2.创建稳健模型：
+
+  - spatialsample package:
+  
+  - discrim package:
+  
+  - poissonreg package:
+  
+  - plsmod package:
+  
+  - rules package:
+  
+  - baguette package:
+  
+  - multilevelmode package:
+  
+  - embed package:
+  
+  - textrecipes package:
+  
+  - themis package:
+  
+  - tidypredict package:
+  
+3.模型调优和比较
+  - workflowsets:
+  - stacks:
+  - finetune:
+  - usemodels:
+  - probably:
+  - tidyposterior:
+  - butcher:
+  - applicable:
+  - shinymodels
+
+
+
+
+
+
+
+
+
+
+
+_参考文献_
+
+- [tidymodels官网 ](https://www.tidymodels.org/)
+- [特征工程书籍：Feature Engineering & Selection](https://bookdown.org/max/FES/)
+- [tidymodel推荐书籍 ](https://www.tidymodels.org/books/)
+- [tidymodels核心包列表](https://www.tidymodels.org/packages/)
+- [--------------------------------------------------------------------]()
+- [------以下内容并非参考资料，可额外阅读，自取-------]()
+- [--------------------------------------------------------------------]()
+- [机器学习实战：使用R、tidyverse和mlr ](https://book.douban.com/subject/35488867/)
+- [R语言新一代机器学习包mlr3快速入门 ](https://zhuanlan.zhihu.com/p/112845336)
+- [mlr3 book](https://mlr3book.mlr-org.com/)
+- [R机器学习 mlr3verse vs tidymodels](https://zhuanlan.zhihu.com/p/441604607)
+
+
