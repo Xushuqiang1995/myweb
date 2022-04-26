@@ -18,7 +18,7 @@ knitr::opts_chunk$set(cache = TRUE, warning = FALSE,
 library(tidymodels)
 library(tidyverse)
 library(devtools)
-library("silgelib") ## 
+library(silgelib) ## tidymodels开发者Julia Silge.
 theme_set(theme_plex())
 ```
 
