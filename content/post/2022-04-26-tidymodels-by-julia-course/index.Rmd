@@ -1,0 +1,599 @@
+---
+title: tidymodels by julia course
+author: shuqiang
+date: '2022-04-26'
+slug: []
+categories:
+  - R
+tags:
+  - tidymodels
+subtitle: ''
+description: ''
+image: ''
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(cache = TRUE, warning = FALSE, 
+                      eval = FALSE,
+                      message = FALSE, echo = TRUE, 
+                      dpi = 180, fig.width = 8, fig.height = 5)
+library(tidyverse)
+library(tidymodels)
+library(embed)
+library(silgelib)
+theme_set(theme_plex())
+```
+
+
+## 1. PCA and UMAP with tidymodels and cocktail recipes
+
+## 2. Impute missing data for historical voyages of captive Africans usin
+
+To build a model to understand more about [the forced transport of captive Africans from this week's #tidytuesday dataset](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-06-16/readme.md)
+
+
+### Explore the data
+```{r, eval=FALSE}
+
+# african_names <- readr::read_csv('https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-06-16/african_names.csv')
+african_names <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-06-16/african_names.csv')
+```
+
+```{r, eval = FALSE}
+skimr::skim(african_names)
+view(african_names)
+
+african_names %>% count(port_disembark, sort = TRUE)
+african_names %>% count(port_embark, sort = TRUE)
+summary(african_names$year_arrival)
+```
+
+
+```{r, eval = FALSE}
+african_names %>%
+  ggplot(aes(year_arrival)) +
+  geom_histogram(bins = 20, alpha = 0.7)
+```
+
+
+```{r, eval = FALSE}
+african_names %>% 
+  filter(year_arrival < 1850) %>% 
+  group_by(year_arrival) %>% 
+  summarise(age = mean(age, na.rm = TRUE)) %>% 
+  ggplot(aes(year_arrival, age)) +
+  geom_line(alpha = 0.6, size = 1.5) +
+  geom_smooth(method = 'lm') +
+  scale_y_continuous(limits = c(0, NA))
+```
+
+
+```{r}
+african_names %>% 
+  ggplot(aes(gender, year_arrival, fill = gender)) +
+  geom_boxplot(alpha = 0.4, show.legend = FALSE)
+african_names %>% 
+  ggplot(aes(gender, age, fill = gender)) +
+  geom_boxplot(alpha = 0.4, show.legend = FALSE) ## 将Boy和Girl合并
+
+```
+
+
+```{r}
+library(ggrepel)
+african_names %>% 
+  group_by(name) %>% 
+  summarise(n = n(),
+            age = mean(age, na.rm = TRUE),
+            year_arrival = mean(year_arrival, na.rm = TRUE)) %>% 
+  ungroup() %>%
+  fitler(n > 30) %>% 
+  ggplot(aes(year_arrival, age)) +
+  geom_point(aes(size = n), alpha = 0.7) +
+  geom_text_repel(aes(label = name), size = 3, family = 'IBMPlexSans-Bold')
+  labs(size = 'Number of people')
+```
+
+
+
+```{r}
+library(naniar)
+african_names %>% 
+  select(gender, height, age) %>% 
+  gg_miss_upset()
+```
+
+
+### Impute missing data
+
+```{r}
+liberated_df <- african_names %>% 
+  filter(year_arrival < 1850) %>% 
+  mutate(gender = case_when(gender == 'Boy' ~ 'Man',
+                            gender == 'Girl' ~ 'Woman',
+                            TRUE ~ gender)) %>% 
+  mutate_if(is.character, factor)
+```
+
+
+```{r}
+library(recipes)
+# recipe只是添加命令，但是没有运行
+impute_rec <- recipe(year_arrival ~ gender + age + height, data = liberated_df) %>%
+  step_meanimpute(height) %>% 
+  step_knnimpute(all_predictors())
+
+```
+
+
+```{r}
+## prep会执行impute_rec中的命令
+imputed <- prep(impute_rec) %>% juice() ;imputed
+
+summary(liberated_df$gender)
+summary(imputed$gender)
+
+summary(liberated_df$age)
+summary(imputed$age)
+```
+
+### Fit model
+```{r}
+fit_lm = lm(year_arrival ~ gender + age, data = imputed)
+tidy(fit_lm)
+```
+
+
+
+
+
+## 3. Tuning XGBoost using tidymodels: 选择最好的参数
+
+XGBoost(eXtreme Gradient Boosting)极致梯度提升，是一种基于GBDT的算法或者说工程实现。
+基于决策树。
+
+- [XGBoost的原理、公式推导、Python实现和应用](https://zhuanlan.zhihu.com/p/162001079)
+
+Let's build a model for [beach volleybal matches from this week's #tidytuesday dataset](https://github.com/jhrcook/tidy-tuesday/blob/master/data/2020-05-19_beach-volleybal.md).
+ Let's tune an xgboost model and predict wins from game play stats like errors, blocks, attacks, etc.
+
+
+### Explore the data
+```{r, eval = FALSE}
+vb_match <- read_csv('https://raw.github.com/jhrcook/tidy-tuesday/blon/master/data/2020-05-19/vb_matches.csv',
+                     guess_max = 76000)
+vb_match %>% view()
+```
+
+
+```{r, eval = FALSE}
+vb_parsed <- vb_match %>% 
+  transmute(circuit,
+            gender,
+            year,
+            w_attacks = w_p1_tot_attacks + w_p2_tot_attacks,
+            w_kills = w_p1_tot_kills + w_p2_tot_kills,
+            w_erros = w_p1_tot_errors + w_p2_tot_errors,
+            w_aces = w_p1_tot_aces + w_p2_tot_aces,
+            w_serve_errors = w_p1_tot_serve_errors + w_p2_tot_serve_errors,
+            w_blocks = w_p1_tot_blocks + w_p2_tot_blocks,
+            w_digs = w_p1_tot_digs + w_p1_tot_digs,
+            l_attacks = l_p1_tot_attacks + l_p2_tot_attacks,
+            l_kills = l_p1_tot_kills + l_p2_tot_kills,
+            l_erros = l_p1_tot_errors + l_p2_tot_errors,
+            l_aces = l_p1_tot_aces + l_p2_tot_aces,
+            l_serve_errors = l_p1_tot_serve_errors + l_p2_tot_serve_errors,
+            l_blocks = l_p1_tot_blocks + l_p2_tot_blocks,
+            l_digs = l_p1_tot_digs + l_p1_tot_digs
+            ) %>% 
+  na.omit()
+
+winners <- vb_parsed %>% 
+  select(circuit, gender, year, w_attacks:w_digs) %>% 
+  rename_with(~ str_remove_all(., 'w_'), w_attacks:w_digs) %>% 
+  mutate(win = 'win')
+
+losers <- vb_parsed %>% 
+  select(circuit, gender, year, l_attacks:l_digs) %>% 
+  rename_with(~ str_remove_all(., 'l_'), l_attacks:l_digs) %>% 
+  mutate(win = 'lose')
+
+vb_df <- bind_rows(winners, losers) %>% 
+  muttae_if(as.character, factor)
+
+vb_df %>% count(gender)
+vb_df %>% count(circuit)
+```
+
+
+```{r, eval=FALSE}
+vb_df %>% 
+  pivot_longer(attacks:digs, names_to = 'stat', values_to = 'value') %>% 
+  ggplot(aes(gender, value, fill = win, color = win)) +
+  geom_boxplot(alpha = 0.4) +
+  facet_wrap( ~ stat, scales = 'free_y', nrow = 2) +
+  labs(y = NULL, color = NULL, fill = NULL)
+```
+
+
+### Build a model
+
+```{r, eval=FALSE}
+library(tidymodels)
+
+set.seed(123)
+vb_split <- initial_split(vb_df, strata = win)
+vb_train <- training(vb_split)
+vb_test <- testing(vb_split)
+```
+
+
+```{r, eval=FALSE}
+## decision tree不需要对数据中心化/step_dummy()
+## 通过tune()设置待定超参数，在xgb_grid中设置调参的具体选项
+
+xgb_spec <- boost_tree(
+  trees = 1000,
+  tree_depth = tune(), min_n = tune(), loss_reduction = tune(),
+  sample_size = tune(), mtry = tune(),
+  learn_rate = tune()) %>% ## 总共设置了6个超参数
+  set_engine('xgboost') %>% 
+  set_mode('classificatoin')
+
+xgb_spec
+?grid_regular
+?grid_latin_hypercube
+```
+
+
+```{r, eval=FALSE}
+?sample_size
+?mtry
+xgb_grid <- grid_latin_hypercube(
+  tree_depth(),
+  min_n(),
+  loss_reduction(),
+  sample_size = sample_prop(),
+  ## 调参可以通过训练集设定与数据集相近的参数，然后再根据得到的参数进行建模
+  finalize(mtry(), vb_train),     ##如果直接用mtry()，会提示需要finalize() 'mtry'
+  learn_rate(),
+  size = 20 ## 20个不同的模型
+)
+
+xgb_grid
+```
+
+
+```{r, eval=FALSE}
+xgb_wf <- workflow() %>% 
+  add_formula(win ~ .) %>% 
+  add_model(xgb_spec)
+
+xgb_wf
+```
+
+
+```{r, eval=FALSE}
+## 对训练接交叉验证
+set.seed(123)
+vb_folds <- vfold_cv(vb_train, strata = win)
+vb_folds
+```
+
+
+```{r}
+doParallel::registerDoParallel()
+
+## set our tuning process（设置调参过程）
+## 对10折数据框vb_folds，进行20个组合参数建模（xgb_grid,20行）
+set.seed(234)
+xgb_res <- tune_grid(
+  xgb_wf,                                  # what to tune
+  resamples = vb_folds,                    # resample data
+  grid = xgb_grid,                         # what possible parameter to try on our model
+  control = control_grid(save_pred = TRUE) # see the predictions
+)
+## 然后选择最优的模型
+```
+
+
+### Explore results
+
+```{r, eval=F}
+xgb_res %>% 
+  collect_metrics() %>% # view() # 查看accuracy/roc_auc数值
+  filter(.metric == 'roc_auc') %>% 
+  select(mean, mtry:sample_size) %>% 
+  pivot_longer(mtry:sample_size,
+               names_to = 'parameter',
+               values_to = 'value') %>% 
+  ggplot(aes(value, mean, color = parameter)) +
+  geom_point(show.legend = FALSE) +
+  facet_wrap( ~parameter, scales = 'free_x') ## 得到了我们的参数画图的效果
+```
+
+
+```{r, eval=FALSE}
+# 展现较好的参数组合
+show_best(xgb_res, 'roc_auc')
+
+# 选择最优的参数
+best_auc <- select_best(xgb_res, 'roc_auc')
+
+将最优的参数赋值给workflow为模型参数
+final_xgb <- finalize_workflow(xgb_wf, best_auc)
+final_xgb
+```
+
+
+```{r, eval=FALSE}
+## variable importance，查看变量的重要性
+library(vip)
+final_xgb %>% 
+  fit(data = vb_train) %>% 
+  pull_workflow_fit() %>% 
+  vip(geom = "point")
+# kills/errors 是最重要的因素
+# circuitAVP   不重要
+```
+
+
+```{r}
+?last_fit # Fit the final best model to training set and evaluate the test set
+final_res <- last_fit(final_xgb, vb_split)
+# Training on the train set and Evaluating with test set
+
+final_res %>% 
+  collect_metrics()
+# 这个时候需要查看选择的参数是否过拟合overfitting
+
+```
+
+
+```{r, eval=FALSE}
+final_res %>% 
+  collect_predictions() %>% # collect predictions in test set
+  conf_mat() %>%            # confusion matrix
+  roc_curve(win, .pred_win) %>% 
+  autoplot()
+```
+
+## 4. Sentiment analysis with tidymodels for Animal Crossing user review
+
+user reviews, how positive/negative the effect
+
+Let's build a model for [Anical Crossing user reviews from this week's #tidymodel dataset](https://github.com/tidy-tuesday/blob/master/data/2020/2020-05-05/readme.md)
+ Let's predict the review rating from words in the review.
+
+### Explore the data
+
+```{r,eval=FALSE}
+library(tidyverse)
+
+user_reviews <- read_tsv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-05-05/ser_reviews.tsv")
+```
+
+
+```{r, eval=FALSE}
+user_reviews %>% 
+  count(grade) %>% 
+  ggplot(aes(grade, n)) +
+  geom_col()
+# 不适合regressoin，采用classificatoin
+```
+
+
+```{r, eval=FALSE}
+# 查看评论语句，需要提取/删除哪些内容？
+user_reviews %>% 
+  filter(grade > 8) %>% 
+  sample_n(5) %>% 
+  pull(text)
+
+user_reviews %>% 
+  filter(grade < 3) %>% 
+  sample_n(5) %>% 
+  pull(text)
+```
+
+
+```{r, eval=FALSE}
+reviews_parsed <- user_reviews %>% 
+  mutate(text = str_remove(text, "Expand$"),
+         rating = case_when(grade > 6 ~ "good"),
+                            TRUE      ~ "bad")
+
+reviews_parsed
+```
+
+
+```{r, eval=FALSE}
+library(tidytext)
+
+words_per_review <- reviews_parsed %>% 
+  unnest_tokens(word, text) %>%
+  count(user_name, name = "total_words")
+
+words_per_review %>% 
+  ggplot(aes(total_words)) +
+  geom_histogram()
+```
+
+
+### Build a model
+
+```{r, eval=FALSE}
+library(tidymodels)
+
+set.seed(123)
+review_split <- initial_split(reviews_parsed, strata = rating)
+review_train <- training(reviews_parsed)
+review_test <- testing(reviews_parsed)
+
+```
+
+
+```{r, eval=FALSE}
+library(textrecipes)
+# 如果感兴趣，还可以事实支持向量机和朴素贝叶斯分类器
+
+review_rec <- recipe(rating ~ text, data = review_train) %>% 
+  step_tokenize(text) %>%     # take strings into words
+  step_stopwords(text) %>%    # 
+  step_tokenfilter(text, max_tokens = 500) %>% # 最多保留高词频的前500字
+  step_tfidf(text) %>%  ## 词频
+  step_normalize(all_predictors())
+
+review_prep <- prep(review_rec)
+review_prep
+juice(review_prep)
+```
+
+
+```{r, eval=FALSE}
+# Declare our model specification
+lasso_spec <- logistic_reg(penalty = tune(), mixture = 1) %>% 
+  set_engine("glmest")
+
+lasso_wf <- workflow() %>% 
+  add_recipe(review_rec) %>% 
+  add_model(lasso_spec)
+
+lasso_wf
+```
+
+
+### Tune model parameters
+
+```{r, eval=FALSE}
+lambda_grid <- grid_regular(penalty(), levels = 30) ## penalty()
+
+set.seed(123)
+review_folds <- bootstraps(review_train, strata = rating)
+review_folds
+```
+
+```{r, eval=FALSE}
+doParallel::registerDoParallel()
+
+set.seed(2020)
+lasso_grid <- tune_grid(
+  lasso_wf,
+  resamples = review_folds,
+  grid = lambda_grid,
+  matrics = metric_set(roc_auc, npv)
+)
+```
+
+
+```{r, eval=FALSE}
+lasso_grid %>% 
+  collect_metrics() %>% 
+  ggplot(aes(penalty, mean, color = .metric)) +
+  geom_line(size = 0.5, show.legend = FALSE) +
+  facet_wrap(~.metric) +
+  scale_x_log10()  ## penalty is tranformed on log
+## 从图中看出penalty在不同npv/ppv/roc_auc中的最优值
+```
+
+
+```{r, eval=FALSE}
+best_auc <- lasso_grid %>% 
+  select_best("roc_auc")
+
+best_auc
+
+final_lasso <- finalize_workflow(x = lasso_wf, parameters = best_auc)
+
+final_lasso
+```
+
+
+```{r, eval=FALSE}
+library(vip)
+
+final_lasso %>%
+  fit(review_train) %>%
+  pull_workflow_fit() %>%  ## pull the fit model
+  vi(lambda = best_auc$penalty) %>% 
+  group_by(Sign) %>% 
+  top_n(20, wt = abs(Importance)) %>% 
+  ungroup() %>% 
+  mutate(Importance = abs(Importance),
+         Variable = str_remove(Variable, "tfidf_text_"),
+         Variable = fct_reorder(Variable, Importance)) %>% 
+  ggplot(aes(x = Importance, y = Variable, fill = Sign)) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~Sign, scales = "free_y")
+```
+
+
+```{r, eval=FALSE}
+# fit to the training data and evaluating the testing data
+review_final <- last_fit(final_lasso, review_split)
+
+review_final %>% 
+  collect_metrics()
+
+# Predictions, 逐步运行，查看测试集的混淆矩阵
+review_final %>%
+  collect_predictions() %>%
+  conf_mat(rating, .pred_class) %>% 
+  
+```
+
+### Choose the final model
+
+## 5. Multinomial classification wi
+
+
+
+## 6. Model the bechdel test for 
+
+
+
+## 7. Principal component analysis
+
+
+
+## 8. Modeling GDPR violations
+
+
+
+## 9. Hyperparameter tuning using
+
+
+
+## 10. Tuning random forest hyperparameter
+
+
+
+## 11. Robust estimation with tidymodels
+
+
+
+## 12. Get started with tidymodels
+
+
+
+## 13. Lasso regression with 
+
+
+
+## 14. Predictive modeling in R with
+
+
+
+## 15. Data preprocessing and re
+
+
+
+## 16. Modeling hotel bookings in
+
+
+
+## 17. Topic modeling with R and tidy data principal
+
+
+

@@ -1,13 +1,14 @@
 ---
-title: Bio Resource
+title: 常用资料
 author: Shuqiang
 date: '2022-04-25'
 slug: []
 categories:
-  - Bio
+  - resource
 tags:
   - Bio
   - Programing
+  - Books
 subtitle: ''
 description: '介绍生物信息相关资料'
 image: ''
@@ -17,11 +18,25 @@ image: ''
 
 - [Julia Silge的个人Blog](https://juliasilge.com/blog/)：通过例子呈现数据分析
 
-- [](https://github.com/rfordatascience/tidytuesday)
-
 - [TidyTuesday data set](https://github.com/rfordatascience/tidytuesday)
 
 - [TidyTuesday 实例脚本](https://hardin47.github.io/TidyTuesday/2022-03-22/babynames.html)
+
+- [mlr3社区](https://mlr3.mlr-org.com/)
+
+- [mlr3 manual book](https://mlr3book.mlr-org.com/mlr3book.pdf)
+
+- [R code chunk(代码块控制选项)](https://cloud.tencent.com/developer/article/1805479)
+
+
+### 生物信息
+
+- [生信常用网站导航](https://gwaslab.com/navigation/)
+
+- [生信编程框架](https://gwaslab.com/programming/)
+
+- []()
+
 
 
 ### 常用资料
@@ -35,12 +50,6 @@ image: ''
 - [机器学习实战：使用R、tidyverse和mlr](https://book.douban.com/subject/35488867/?_dtcc=1)
 
 
-### 生物信息
+### 后端开发
 
-- [生信常用网站导航](https://gwaslab.com/navigation/)
-
-- [生信编程框架](https://gwaslab.com/programming/)
-
-
-
-- []()
+- [GoLang全栈](https://hao.golangstack.com/)

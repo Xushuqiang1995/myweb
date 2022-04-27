@@ -1,23 +1,84 @@
 ---
-title: R 实用函数（不熟悉的）
+title: R 实用函数（加强学习）
 author: Shuqiang
 date: '2022-04-26'
 slug: []
 categories:
   - resource
 tags:
-  - books
+  - R function
 
 subtitle: ''
-description: ''
+description: '实用的R函数，需要多看巩固；从别人脚本那学来的新函数'
 image: ''
 ---
 
 
 
 <p>好滴 ~ 谢谢 ~ 那我感觉自己还需要再补充些shiny开发的知识、生信分析流程掌握；</p>
-<ul>
-<li><p><a href=""></a></p></li>
-<li><p><a href=""></a></p></li>
-<li><p><a href=""></a></p></li>
-</ul>
+<pre class="r"><code># parse_number: 直接提取第一个数字
+parse_number(x = c(&#39;16.8 OA&#39;, &#39;18 OA&#39;))</code></pre>
+<pre><code>## [1] 16.8 18.0</code></pre>
+<pre class="r"><code># dplyr::add_count，计数添加到列
+iris %&gt;%
+  add_count(Species) %&gt;%
+  head(5)</code></pre>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species  n
+## 1          5.1         3.5          1.4         0.2  setosa 50
+## 2          4.9         3.0          1.4         0.2  setosa 50
+## 3          4.7         3.2          1.3         0.2  setosa 50
+## 4          4.6         3.1          1.5         0.2  setosa 50
+## 5          5.0         3.6          1.4         0.2  setosa 50</code></pre>
+<pre class="r"><code># rowise,mutate_if,across运算 行均值
+iris %&gt;%
+  rowwise() %&gt;%
+  mutate(row_mean = across(.cols = ends_with(&#39;th&#39;)) %&gt;%
+              mean(na.rm = TRUE)) %&gt;% head()</code></pre>
+<pre><code>## # A tibble: 6 x 6
+## # Rowwise: 
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species row_mean
+##          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;      &lt;dbl&gt;
+## 1          5.1         3.5          1.4         0.2 setosa        NA
+## 2          4.9         3            1.4         0.2 setosa        NA
+## 3          4.7         3.2          1.3         0.2 setosa        NA
+## 4          4.6         3.1          1.5         0.2 setosa        NA
+## 5          5           3.6          1.4         0.2 setosa        NA
+## 6          5.4         3.9          1.7         0.4 setosa        NA</code></pre>
+<pre class="r"><code>iris %&gt;%
+  rowwise() %&gt;%
+  mutate_if(is.numeric, log2) %&gt;% head() </code></pre>
+<pre><code>## # A tibble: 6 x 5
+## # Rowwise: 
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+##          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  
+## 1         2.35        1.81        0.485       -2.32 setosa 
+## 2         2.29        1.58        0.485       -2.32 setosa 
+## 3         2.23        1.68        0.379       -2.32 setosa 
+## 4         2.20        1.63        0.585       -2.32 setosa 
+## 5         2.32        1.85        0.485       -2.32 setosa 
+## 6         2.43        1.96        0.766       -1.32 setosa</code></pre>
+<pre class="r"><code># pivot_wider(data = , names_from = ####, values_from = ####, values_fill = 0)
+# values_fill填补缺失值为0
+
+# 对df中的列名去除空格，替换为_，这样列变量名看起来更舒服
+# janitor::clean_names()</code></pre>
+<pre class="r"><code># 将term排序，在每个component组内，按照values大小排序
+library(tidytext)
+mutate(terms = reorder_within(x = terms, by = abs(values), within = component))
+scale_y_reordered() # 用于排序画图
+
+recipes::prep(&#39;Recipe&#39;) %&gt;%
+  juice()
+
+# PCA画图添加点的标签
+ggplot(aes(x = PC1, y = PC2, labels = VAR)) +
+  geom_text(check_overlap = TRUE, family = &#39;IBMPlexSans-Bold&#39;, hjust = &#39;inward&#39;)
+# silgelib::theme_plex 选择
+# umap降维，?embed::step_umap()
+##########
+#### PCA和Umap降维算法的区别
+# https://blog.csdn.net/qq_43337249/article/details/116612811
+# https://gwaslab.com/2021/09/16/umap/
+PCA:线性降维
+UMAP:非线性降维技术，与PCA不同，它视图找出样本的相似处然后collaping，其能够避免集群表示的过度拥挤，在重叠区域上能表示出不同的集群而被广泛运用
+可以考虑对不同的降维方法画图比较。</code></pre>

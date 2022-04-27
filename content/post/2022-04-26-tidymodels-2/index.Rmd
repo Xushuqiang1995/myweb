@@ -84,3 +84,6 @@ as.data.frame(first_resample, data = "assessment")
 # assessment(first_resample)
 ```
 
+
+
+### [**2. recipes package**](https://rsample.tidymodels.org/reference/index.html)：是一个数据预处理器
