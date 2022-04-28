@@ -28,7 +28,7 @@ image: ''
 
 - [R code chunk(代码块控制选项)](https://cloud.tencent.com/developer/article/1805479)
 
-- [R特征工程讲解](https://bookdown.org/max/FES/important-concepts.html#model-bias-and-variance)
+- [特征工程和选择：预测模型的实用方法-R](https://bookdown.org/max/FES/important-concepts.html#model-bias-and-variance)
 
 
 ### 生物信息

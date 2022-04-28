@@ -597,3 +597,9 @@ review_final %>%
 
 
 
+
+
+_参考文献_
+- [parsnip model选择](https://www.tidymodels.org/find/parsnip/)
+
+- [receip step选择](https://www.tidymodels.org/find/recipes/)
