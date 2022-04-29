@@ -10,6 +10,7 @@ tags:
 subtitle: ''
 description: 'tidymodels中核心包的应用，达到熟悉使用的目的。主要包括package中的函数、参数介绍及应用'
 image: ''
+categories: [ "Tips" ]
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(cache = TRUE, warning = FALSE,

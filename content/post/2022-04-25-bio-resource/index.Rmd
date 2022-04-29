@@ -12,6 +12,7 @@ tags:
 subtitle: ''
 description: '介绍生物信息相关资料'
 image: ''
+categories: [ "Tips" ]  
 ---
 
 ### R

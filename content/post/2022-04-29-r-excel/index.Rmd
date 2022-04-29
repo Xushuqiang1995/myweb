@@ -10,6 +10,7 @@ tags:
 subtitle: ''
 description: 'R模拟鼠标，批量将excel文件另存为后，再批量整理excel表格，去除不需要的数据'
 image: ''
+categories: [ "Tips" ]  
 ---
 ```{r setup, include=FALSE, eval = FALSE}
 knitr::opts_chunk$set(cache = TRUE, warning = FALSE,

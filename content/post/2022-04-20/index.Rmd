@@ -11,6 +11,7 @@ tags:
 subtitle: ''
 description: '实用的R函数，需要多看巩固；从别人脚本那学来的新函数'
 image: ''
+categories: [ "Tips" ]  
 ---
 ```{r setup, include=FALSE, eval=FALSE}
 knitr::opts_chunk$set(cache = TRUE, warning = FALSE,
