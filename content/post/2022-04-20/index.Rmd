@@ -71,6 +71,7 @@ UMAP:非线性降维技术，与PCA不同，它视图找出样本的相似处然
 
 ## PCA画图，stat_ellipes(椭圆图，用于圈分类), annotate(添加文本/公式/圈点图等等)
 # https://www.jianshu.com/p/14e1be78714f
+# https://zhuanlan.zhihu.com/p/354086571
 ```
 
 
