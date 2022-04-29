@@ -12,7 +12,7 @@ subtitle: ''
 description: '实用的R函数，需要多看巩固；从别人脚本那学来的新函数'
 image: ''
 ---
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, eval=FALSE}
 knitr::opts_chunk$set(cache = TRUE, warning = FALSE,
                       message = FALSE, echo = TRUE, 
                       dpi = 180, fig.width = 8, fig.height = 5)
@@ -68,5 +68,15 @@ ggplot(aes(x = PC1, y = PC2, labels = VAR)) +
 PCA:线性降维
 UMAP:非线性降维技术，与PCA不同，它视图找出样本的相似处然后collaping，其能够避免集群表示的过度拥挤，在重叠区域上能表示出不同的集群而被广泛运用
 可以考虑对不同的降维方法画图比较。
+
+## PCA画图，stat_ellipes(椭圆图，用于圈分类), annotate(添加文本/公式/圈点图等等)
+# https://www.jianshu.com/p/14e1be78714f
 ```
+
+
+```{r}
+# 生信分析火山图：双曲线图，不同于以往的线性划分
+# https://www.jianshu.com/p/580395598150
+```
+
 
