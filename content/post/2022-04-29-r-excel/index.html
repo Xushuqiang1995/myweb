@@ -1,0 +1,134 @@
+---
+title: R 整理知网excel数据
+author: shuqiang
+date: '2022-04-29'
+slug: []
+categories: ["R"]
+tags: ['KeyboardSimulator']
+subtitle: ''
+description: 'R模拟鼠标，批量将excel文件另存为后，再批量整理excel表格，去除不需要的数据'
+image: ''
+---
+
+
+
+<pre class="r"><code>knitr::opts_chunk$set(cache = TRUE, warning = FALSE,
+                      message = FALSE, echo = TRUE, 
+                      dpi = 180, fig.width = 8, fig.height = 5)
+library(tidymodels)
+library(tidyverse)
+library(devtools)
+library(silgelib) ## tidymodels开发者Julia Silge.
+theme_set(theme_plex())</code></pre>
+<div id="excel文件另存为" class="section level3">
+<h3>excel文件另存为</h3>
+<pre class="r"><code># 问题描述：知网直接下载的excel文件无法直接用R/Python打开，只能将excel文件另存为后方可导入R/Python
+# 操作：通过KeyboardSimulator package来模型鼠标操作，通过R控制鼠标自动将所有excel文件另存为一个新文件
+library(KeyboardSimulator)
+for (i in 1:4) {
+  ## 每次垂直移动距离
+  v_interval &lt;- 20
+  ## 初始文件位置
+  file &lt;- c(403, 137)
+  mouse.move(x = file[1], 
+             y = (file[2] + (1-1)*v_interval))
+  Sys.sleep(2)
+  mouse.click()
+  mouse.click()
+  Sys.sleep(5)
+  
+  ## 文件保存，根据自己电脑参数位置自行调整
+  if(T){
+    #### 进入WPS全屏界面后的操作
+    ## 点击左上角文件
+    location_file &lt;- c(40, 60)
+    mouse.move(location_file[1], location_file[2])
+    mouse.click()
+    Sys.sleep(2)
+    
+    ## 另存为有个小的向右符号
+    location_resave &lt;- c(180, 230) 
+    mouse.move(location_resave[1], location_resave[2])
+    mouse.click()
+    Sys.sleep(2)
+    
+    ## 选择另存为xlsx文件
+    location_xlsx &lt;- c(300, 320) 
+    mouse.move(location_xlsx[1], location_xlsx[2])
+    mouse.click()
+    Sys.sleep(2)
+    
+    ## 选择保存位置为桌面
+    location_dektop &lt;- c(570, 430) 
+    mouse.move(location_dektop[1], location_dektop[2])
+    mouse.click()
+    Sys.sleep(2)
+    
+    ## 移动到目标文件夹（文件保存的位置）
+    location_TTT_file &lt;- c(943, 603) 
+    mouse.move(location_TTT_file[1], location_TTT_file[2])
+    mouse.click()
+    Sys.sleep(3)
+    
+    ## 点击保存
+    location_save &lt;- c(1275, 815) 
+    mouse.move(location_save[1], location_save[2])
+    mouse.click()
+    mouse.click()
+    Sys.sleep(3)
+    
+    ## 关闭WPS文件
+    wps_close &lt;- c(1919, 0)
+    mouse.move(wps_close[1], wps_close[2])
+    mouse.click()
+    Sys.sleep(2)
+  }
+  Sys.sleep(4)
+}</code></pre>
+</div>
+<div id="整理知网excel数据" class="section level3">
+<h3>整理知网excel数据</h3>
+<pre class="r"><code># 问题:需要批量化读取excel文件，但是每个excel中实际需要的内容行起始位置各不相同，需要将文件导入后进行清理，然后根据表中的内容统一命名
+# 步骤:每个表数据的第一列起始数据为“全国”，根据这一特征定位，分别对变量名和需求数据清理
+
+# 读取整个excel
+a &lt;- readxl::read_xlsx(path = &quot;2-10.xlsx&quot;)
+
+# 获取表格含value的数据
+df_start_row &lt;- which(a == &quot;全国&quot;) - 1
+df &lt;- readxl::read_xlsx(path = &quot;2-10.xlsx&quot;, skip = df_start_row)
+
+# 整理列名数据框
+df_name0 &lt;- read_xlsx(path = &quot;2-10.xlsx&quot;, n_max = df_start_row + 1, col_names = F)
+df_name1 &lt;- lapply(df_name0, str_c) %&gt;%
+  lapply(., na.omit) %&gt;% 
+  ## 去除中文
+  lapply(., str_remove_all, pattern = &quot;[\u4e00-\u9fa5]+&quot;) %&gt;%
+  lapply(., str_subset, pattern = &quot;[A-Z,a-z]&quot;) %&gt;% 
+  lapply(., str_trim) %&gt;%
+  lapply(., paste0, collapse = &quot; &quot;) %&gt;%
+  unlist() %&gt;%
+  as.vector()
+
+df_name1[2] &lt;- &quot;Province&quot;
+colnames(df) &lt;- df_name1
+
+# map同lapply用法极其相似
+df_name1 &lt;- map(df_name0, str_c) %&gt;%
+  map(., na.omit) %&gt;% 
+  map(., function(x) str_remove_all(x, &quot;[\u4e00-\u9fa5]+&quot;)) %&gt;% 
+  map(., function(x) str_subset(x, pattern = &quot;[A-Z,a-z]&quot;)) %&gt;% 
+  map(., str_trim) %&gt;%
+  map(., function(x) paste0(x, collapse = &quot; &quot;)) %&gt;%
+  unlist() %&gt;%
+  as.vector()
+
+map(df_name0, str_c) %&gt;%
+  map(., na.omit) %&gt;% 
+  map(., ~ str_remove_all(.x, &quot;[\u4e00-\u9fa5]+&quot;)) %&gt;% 
+  map(., ~ str_subset(.x, pattern = &quot;[A-Z,a-z]&quot;)) %&gt;% 
+  map(., str_trim) %&gt;%
+  map(., ~ paste0(.x, collapse = &quot; &quot;)) %&gt;%
+  unlist() %&gt;%
+  as.vector()</code></pre>
+</div>

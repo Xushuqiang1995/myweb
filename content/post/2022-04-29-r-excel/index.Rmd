@@ -3,16 +3,13 @@ title: R 整理知网excel数据
 author: shuqiang
 date: '2022-04-29'
 slug: []
-categories:
-  - R
-tags:
-  - KeyboardSimulator
+categories: ["R"]
+tags: ['KeyboardSimulator']
 subtitle: ''
 description: 'R模拟鼠标，批量将excel文件另存为后，再批量整理excel表格，去除不需要的数据'
 image: ''
-categories: [ "Tips" ]  
 ---
-```{r setup, include=FALSE, eval = FALSE}
+```{r setup, eval = FALSE}
 knitr::opts_chunk$set(cache = TRUE, warning = FALSE,
                       message = FALSE, echo = TRUE, 
                       dpi = 180, fig.width = 8, fig.height = 5)
@@ -24,8 +21,8 @@ theme_set(theme_plex())
 ```
 
 
-# excel文件另存为
-```{r}
+### excel文件另存为
+```{r  eval = FALSE}
 # 问题描述：知网直接下载的excel文件无法直接用R/Python打开，只能将excel文件另存为后方可导入R/Python
 # 操作：通过KeyboardSimulator package来模型鼠标操作，通过R控制鼠标自动将所有excel文件另存为一个新文件
 library(KeyboardSimulator)
@@ -93,8 +90,8 @@ for (i in 1:4) {
 ```
 
 
-# 整理知网excel数据
-```{r}
+### 整理知网excel数据
+```{r eval = FALSE}
 # 问题:需要批量化读取excel文件，但是每个excel中实际需要的内容行起始位置各不相同，需要将文件导入后进行清理，然后根据表中的内容统一命名
 # 步骤:每个表数据的第一列起始数据为“全国”，根据这一特征定位，分别对变量名和需求数据清理
 

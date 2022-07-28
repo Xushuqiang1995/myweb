@@ -11,30 +11,32 @@ tags:
 subtitle: ''
 description: '实用的R函数，需要多看巩固；从别人脚本那学来的新函数'
 image: ''
-categories: [ "Tips" ]  
+
 ---
-```{r setup, include=FALSE, eval=FALSE}
+```{r setup, eval=FALSE}
 knitr::opts_chunk$set(cache = TRUE, warning = FALSE,
                       message = FALSE, echo = TRUE, 
+                      eval=FALSE,
                       dpi = 180, fig.width = 8, fig.height = 5)
 library(tidyverse)
+library('tidytext')
 ```
 
 好滴 ~ 谢谢 ~ 那我感觉自己还需要再补充些shiny开发的知识、生信分析流程掌握；
 
 
-```{r}
+```{r, eval=FALSE}
 # parse_number: 直接提取第一个数字
 parse_number(x = c('16.8 OA', '18 OA'))
 # dplyr::add_count，计数添加到列
 iris %>%
   add_count(Species) %>%
-  head(5)
+  head()
 # rowise,mutate_if,across运算 行均值
-iris %>%
-  rowwise() %>%
-  mutate(row_mean = across(.cols = ends_with('th')) %>%
-              mean(na.rm = TRUE)) %>% head()
+# iris %>%
+#   rowwise() %>%
+#   mutate(row_mean = across(.cols = ends_with('th')) %>%
+#               mean(na.rm = TRUE)) %>% head()
 iris %>%
   rowwise() %>%
   mutate_if(is.numeric, log2) %>% head() 
@@ -50,12 +52,12 @@ iris %>%
 
 ```{r, eval = FALSE}
 # 将term排序，在每个component组内，按照values大小排序
-library(tidytext)
-mutate(terms = reorder_within(x = terms, by = abs(values), within = component))
-scale_y_reordered() # 用于排序画图
 
-recipes::prep('Recipe') %>%
-  juice()
+# mutate(terms = reorder_within(x = terms, by = abs(values), within = component))
+# scale_y_reordered() # 用于排序画图
+
+# recipes::prep('Recipe') %>%
+#   juice()
 
 # PCA画图添加点的标签
 ggplot(aes(x = PC1, y = PC2, labels = VAR)) +
@@ -66,9 +68,9 @@ ggplot(aes(x = PC1, y = PC2, labels = VAR)) +
 #### PCA和Umap降维算法的区别
 # https://blog.csdn.net/qq_43337249/article/details/116612811
 # https://gwaslab.com/2021/09/16/umap/
-PCA:线性降维
-UMAP:非线性降维技术，与PCA不同，它视图找出样本的相似处然后collaping，其能够避免集群表示的过度拥挤，在重叠区域上能表示出不同的集群而被广泛运用
-可以考虑对不同的降维方法画图比较。
+# PCA:线性降维
+# UMAP:非线性降维技术，与PCA不同，它视图找出样本的相似处然后collaping，其能够避免集群表示的过度拥挤，在重叠区域上能表示出不同的集群而被广泛运用
+# 可以考虑对不同的降维方法画图比较。
 
 ## PCA画图，stat_ellipes(椭圆图，用于圈分类), annotate(添加文本/公式/圈点图等等)
 # https://www.jianshu.com/p/14e1be78714f

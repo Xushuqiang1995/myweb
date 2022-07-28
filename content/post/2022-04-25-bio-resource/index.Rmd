@@ -4,7 +4,7 @@ author: Shuqiang
 date: '2022-04-25'
 slug: []
 categories:
-  - resource
+  - R
 tags:
   - Bio
   - Programing
@@ -12,7 +12,6 @@ tags:
 subtitle: ''
 description: '介绍生物信息相关资料'
 image: ''
-categories: [ "Tips" ]  
 ---
 
 ### R

@@ -91,6 +91,8 @@ _参考文献_
 - [themes/cayman-hugo-theme](https://themes.gohugo.io/themes/cayman-hugo-theme/)
 - [B站blogdown教学](https://www.bilibili.com/video/BV1gL411A71J/?spm_id_from=333.788)
 - [参考网址](https://pzhao.org/zh/post/r-blogdown/)
+- [github添加SSH Keys](https://blog.csdn.net/qq_35658349/article/details/103334343)
+- [Tools > Global Options > Git/SVN > Create RSA Keys]()
 
 [^1]: [Rmakdown官方教程](https://markdown.com.cn/)
 [^2]: [Netlify官网](https://app.netlify.com/)
