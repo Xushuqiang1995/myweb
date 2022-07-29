@@ -1,0 +1,273 @@
+---
+title: Rmarkdown和Code Chunk详解
+author: Shuqiang
+date: '2022-07-28'
+slug: []
+categories:
+  - R
+toc: TRUE
+tags:
+  - Rmarkdown
+subtitle: ''
+description: ''
+image: ''
+---
+
+
+<div id="TOC">
+
+</div>
+
+<div id="yyds-rmarkdown" class="section level2">
+<h2>yyds rmarkdown</h2>
+<p>.Rmd文件的好处：</p>
+<ul>
+<li><p>结合了markdown和R/Python代码</p></li>
+<li><p>代码/文本/图表复现，适合用来作报告</p></li>
+<li><p>直接控制台rmarkdown::render(“XXX.rmd”)，生成word/pdf/beamer/html文档</p></li>
+<li><p>该语法也用于blogdown和bookdown</p></li>
+</ul>
+<hr />
+</div>
+<div id="rmarkdown语法文本" class="section level2">
+<h2>rmarkdown语法：文本</h2>
+<ul>
+<li>下列示例中，左边为<strong>实际效果</strong>，右边为<strong>rmd语法</strong><br />
+</li>
+<li>简单文本<br />
+</li>
+<li>(在字段末尾添加2个空格<br />
+</li>
+<li>可以另起一行)</li>
+<li><em>斜体</em>：*斜体*<br />
+</li>
+<li><strong>加粗</strong>：**加粗**<br />
+</li>
+<li>superscript<sup>2</sup>/subscript<sub>2</sub>：superscript^2^/subscript~2~<br />
+</li>
+<li><del>strikethrough</del>：~~strikethrough~~<br />
+</li>
+<li>转义符: * _ \：\*<br />
+</li>
+<li>Header 1：用#的个数表示几级标题</li>
+<li>无序列表： - 无序列表<br />
+</li>
+<li>1.有序列表： 1. 有序列表</li>
+<li><a href="http://www.rstudio.com/" class="uri">http://www.rstudio.com/</a>：&lt;链接地址&gt;</li>
+<li><a href="链接地址">链接内容</a>：[链接内容](链接地址)<br />
+</li>
+<li><img src="" alt="Caption" />：![Caption](image.png)<br />
+</li>
+<li><code>verbatim code</code>： `verbatim code`<br />
+</li>
+<li><pre><code>multiple lines
+of verbatim code  专门的代码块</code></pre></li>
+<li><blockquote>
+<p>block quotes：&gt; block quotes</p>
+</blockquote></li>
+<li>equation: <span class="math inline">\(e^{i \pi} + 1 = 0\)</span><br />
+</li>
+<li><table>
+<thead>
+<tr class="header">
+<th align="right">Right</th>
+<th align="left">Left</th>
+<th>Default</th>
+<th align="center">Center</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">——-:</td>
+<td align="left">:——</td>
+<td>———–</td>
+<td align="center">:———:</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="left">12</td>
+<td>12</td>
+<td align="center">12</td>
+</tr>
+<tr class="odd">
+<td align="right">123</td>
+<td align="left">123</td>
+<td>123</td>
+<td align="center">123</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">1</td>
+<td>1</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table></li>
+<li>horizontal rule: 一条横线分割，3个 - ，如：---</li>
+</ul>
+<hr />
+</div>
+<div id="code-chunk对其运行代码展示输出等内容进行控制" class="section level2">
+<h2>Code Chunk：对其运行、代码展示、输出等内容进行控制</h2>
+<style>
+table th:first-of-type {
+    width: 3cm;
+}
+table th:nth-of-type(2) {
+    width: 2cm;
+}
+table th:nth-of-type(3) {
+    width: 5cm;
+}
+table th:nth-of-type(4) {
+    width: 4cm;
+}
+</style>
+<table style="width:100%;">
+<colgroup>
+<col width="24%" />
+<col width="24%" />
+<col width="28%" />
+<col width="22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">OPTION </th>
+<th align="left">DEFAULT </th>
+<th align="left">EFFECTS </th>
+<th align="left">中文解释 </th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">echo</td>
+<td align="left">TRUE</td>
+<td align="left">display code in output document</td>
+<td align="left">输出显示代码</td>
+</tr>
+<tr class="even">
+<td align="left">error</td>
+<td align="left">FALSE</td>
+<td align="left"><strong>TRUE</strong> (display error messages in doc) <br> <strong>FALSE</strong> (stop render when error occurs)</td>
+<td align="left"><strong>TRUE</strong>(输出显示报错) <br> <strong>FALSE</strong>(出现报错则停止render)</td>
+</tr>
+<tr class="odd">
+<td align="left">eval</td>
+<td align="left">TRUE</td>
+<td align="left">run code in chunk</td>
+<td align="left">运行代码块</td>
+</tr>
+<tr class="even">
+<td align="left">include</td>
+<td align="left">TRUE</td>
+<td align="left">include chunk in doc after running</td>
+<td align="left">运行后输出中显示代码，相当于echo/eval的结合体</td>
+</tr>
+<tr class="odd">
+<td align="left">message</td>
+<td align="left">TRUE</td>
+<td align="left">display code messages in document</td>
+<td align="left">输出中显示提示信息</td>
+</tr>
+<tr class="even">
+<td align="left">warning</td>
+<td align="left">TRUE</td>
+<td align="left">display code warnings in document</td>
+<td align="left">输出中显示警告信息</td>
+</tr>
+<tr class="odd">
+<td align="left">results</td>
+<td align="left">“markup”</td>
+<td align="left">“asis” (passthrough results) <br> “hide” (don’t display results) <br> “hold” (put all results below all code)</td>
+<td align="left"><strong>没试过??待定</strong></td>
+</tr>
+<tr class="even">
+<td align="left">fig.align</td>
+<td align="left">“default”</td>
+<td align="left">“left”, “right”, or “center”</td>
+<td align="left">图片输出位置</td>
+</tr>
+<tr class="odd">
+<td align="left">fig.alt</td>
+<td align="left">NULL</td>
+<td align="left">alt text for a figure</td>
+<td align="left"><strong>没试过??待定</strong></td>
+</tr>
+<tr class="even">
+<td align="left">fig.cap</td>
+<td align="left">NULL</td>
+<td align="left">figure caption as a character string</td>
+<td align="left">图片索引来源</td>
+</tr>
+<tr class="odd">
+<td align="left">fig.path</td>
+<td align="left">“figure/”</td>
+<td align="left">prefix for generating figure file paths</td>
+<td align="left">图片宽度</td>
+</tr>
+<tr class="even">
+<td align="left">fig.width &amp; fig.height</td>
+<td align="left">7</td>
+<td align="left">plot dimensions in inches</td>
+<td align="left">图片高宽</td>
+</tr>
+<tr class="odd">
+<td align="left">out.width</td>
+<td align="left"></td>
+<td align="left">rescales output width, e.g. “75%”, “300px”</td>
+<td align="left"><strong>修改输出宽度</strong></td>
+</tr>
+<tr class="even">
+<td align="left">collapse</td>
+<td align="left">FALSE</td>
+<td align="left">collapse all sources &amp; output into a single block</td>
+<td align="left">将所有输出放在一个单独块中</td>
+</tr>
+<tr class="odd">
+<td align="left">comment</td>
+<td align="left">“##”</td>
+<td align="left">prefix for each line of results</td>
+<td align="left"><strong>没试过??待定</strong></td>
+</tr>
+<tr class="even">
+<td align="left">child</td>
+<td align="left">NULL</td>
+<td align="left">files(s) to knit and then include</td>
+<td align="left"><strong>没试过??待定</strong></td>
+</tr>
+<tr class="odd">
+<td align="left">purl</td>
+<td align="left">TRUE</td>
+<td align="left">include or exclude a code chunk when extracting source code with knitr::purl()</td>
+<td align="left"><strong>没试过??待定</strong></td>
+</tr>
+</tbody>
+</table>
+<pre><code>See more options and defaults by running str(knitr::opts_chunk$get())
+设置code chunk全局参数knitr::opts_chunk$get()</code></pre>
+</div>
+<div id="yaml选项输出htmlwordpptbeamer等等" class="section level2">
+<h2>YAML选项：输出html/word/ppt/beamer等等</h2>
+<pre class="r"><code>library(rmarkdown)
+# 输入`?html_document`打开新世界
+?html_document
+尝试将参数toc修改下，输出文档中会添加一个目录
+
+##### prettydoc package
+title: &quot;Your Document Title&quot;
+author: &quot;Document Author&quot;
+date: &quot;`r Sys.Date()`&quot;
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github</code></pre>
+<hr />
+<blockquote>
+<p><strong>参考资料</strong><br />
+- <a href="https://www.rstudio.com/resources/cheatsheets/"><code>rmarkdown-Cheatsheet</code></a><br />
+- <a href="http://rmarkdown.rstudio.com/index.html"><code>Rmarkdown</code></a><br />
+- <a href="https://zhuanlan.zhihu.com/p/93239297"><code>Markdown改变表格列宽方法一</code></a><br />
+- <a href="https://blog.zhheo.com/p/2307e72f.html"><code>Markdown改变表格列宽方法二</code></a><br />
+- <a href="https://cosx.org/2019/06/r-markdown-slides-ljj/"><code>基于 R Markdown 的演示文稿和报告模板使用经验</code></a></p>
+</blockquote>
+</div>

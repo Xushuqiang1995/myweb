@@ -1,5 +1,5 @@
 ---
-title: 常用git命令及SSL协议设置
+title: 常用git命令及SSH协议设置
 author: Shuqiang
 date: '2022-03-29'
 slug: R
@@ -16,20 +16,22 @@ image: ''
 
 ### 为什么要使用ssh秘钥？
 
+SSH/SRA秘钥存在的目的在于让你的RStudio拥有“钥匙”进入github修改相应文件，主要是为了获取权限
 
 ```{r eval=FALSE, message=TRUE}
-# 本地创建ssh key
+# 打开git bass命令窗，创建ssh key
 $ ssh-keygen -t rsa -C "Xushuqiang19995@806135661@qq.com"
 代码运行后会在.ssh文件夹下有id_rsa.pub文件，Notepad文件打开复制内容
-回到github setting中添加SSH key
+Github添加SSH key过程：github网页界面 > setting > SSH and GPG keys > New SSH key > 将C:\Users\user\.ssh\id_rsa.pub内容粘贴
 
-# 验证是否成功，git bash下输入
+# 开始验证github添加SSH key成功，git bash下输入
 $ ssh -T git@github.com
 
-# 修改本地的ssh remote.url 不用https协议，改用git协议。下列命令查看当前协议
+# 修改本地的ssh remote.url 不用https协议，改用git协议。下列命令查看当前远程版本控制协议为https/git
+# 通常是https开头的
 $ git remote -v
 
-# 修改协议为git
+# 因此接下来修改协议为git
 $ git remote set-url origin git@github.com:Xushuqiang1995/myweb.git
 $ git remote -v
 

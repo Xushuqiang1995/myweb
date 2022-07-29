@@ -25,12 +25,17 @@ knitr::opts_chunk$set(echo = TRUE)
 install.packages('blogdown')
 library(blogdown)
 blogdown::hugo_version() # check if hugo exist and version, if not then download
-blogdown::install_hugo() 
+blogdown::install_hugo() # 有时候出现无法下载的情况，则blogdown::install_hugo(force = TRUE)
 ```
   4. 配置website文件夹下的环境/主题
-      在[___Hugo主页___](https://themes.gohugo.io/)中选择主题并载入
+      在[**Hugo主页**](https://themes.gohugo.io/)中选择主题并载入
 
 ```{r eval=FALSE, message=TRUE}
+# 主题选择
+# 备选https://themes.gohugo.io/themes/hugo-elate-theme/
+# https://github.com/saey55/hugo-elate-theme
+
+# https://github.com/zhaohuabing/hugo-theme-cleanwhite
 new_site(theme = 'zhaohuabing/hugo-theme-cleanwhite')
 # Stop Server and Start Server
 stop_server()
@@ -40,13 +45,14 @@ serve_site()
 
 ```{r eval=FALSE, message=TRUE}
 check_gitignore()
-# 根据反馈的[Todo]信息在.gitgnore中添加
+# 根据反馈要求取做，回显示需要完成的步骤
+# 根据反馈的[Todo]信息，需要在.gitgnore中添加（PS:每个人的情况可能略有不同）
     .DS_Store
     Thumbs.db
     /public
     /resources
 check_content()
-# 得到Great! 信息，则一切顺利
+# 得到Great! 信息，则一切顺利；如果未出现，则查看返回上一步查看需要待做事项
 # 至此，我们的project都为website
 ```
 
@@ -62,13 +68,13 @@ git add -A # 所有本地website文件同步至github
   4. 点击绿色Push提交，得到 HEAD -> main反馈，可以去github下查看是否更新  
 
 
-### 配置netlify
-  1. 打开Netlify网页并通过github登录[^2]
+### 配置netlify[^2]
+  1. 打开Netlify网页并通过github登录
   2. Add New Site > Import Exsiting Project > 选择github > 通过授权选择对应的website repository > Show Advanced > New Varible 输入hugo version对应信息 > Deploy(部署)
   3. 页面上方可看到你的个人网页链接，然后可以选择change site name
   4. 成功部署[个人博客](https://shuqiang.netlify.app/)
   5. 编辑config.yarm文件，修改baseurl:: ####为你的博客链接
-```{shell eval=FALSE, message=TRUE}
+```{r eval=FALSE, message=TRUE}
 # git提交报错10054，在website文件夹下打开git bash命令
 # 取消http代理
 git config --global --unset http.proxy
@@ -87,7 +93,6 @@ _参考文献_
 
 - [Rmarkdown](http://rmarkdown.rstudio.com/index.html)
 - [Cheat Sheet](https://www.rstudio.com/resources/cheatsheets/)
-- [Tidymodels](https://www.tidymodels.org/)
 - [themes/cayman-hugo-theme](https://themes.gohugo.io/themes/cayman-hugo-theme/)
 - [B站blogdown教学](https://www.bilibili.com/video/BV1gL411A71J/?spm_id_from=333.788)
 - [参考网址](https://pzhao.org/zh/post/r-blogdown/)

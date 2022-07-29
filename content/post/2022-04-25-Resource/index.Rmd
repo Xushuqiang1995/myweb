@@ -1,0 +1,68 @@
+---
+title: R/Python/电子书/生物信息 资料
+author: Shuqiang
+date: '2022-04-25'
+slug: []
+categories:
+  - R
+tags:
+  - Bio
+  - Programing
+  - Books
+subtitle: ''
+description: '介绍生物信息相关资料'
+image: ''
+---
+
+### R
+
+- [Julia Silge的个人Blog](https://juliasilge.com/blog/)：通过例子呈现数据分析  
+- [TidyTuesday data set](https://github.com/rfordatascience/tidytuesday)  
+- [TidyTuesday 实例脚本](https://hardin47.github.io/TidyTuesday/2022-03-22/babynames.html)  
+- [mlr3社区](https://mlr3.mlr-org.com/)  
+- [mlr3 manual book](https://mlr3book.mlr-org.com/mlr3book.pdf)  
+- [R code chunk(代码块控制选项)](https://cloud.tencent.com/developer/article/1805479)  
+- [特征工程和选择：预测模型的实用方法-R](https://bookdown.org/max/FES/important-concepts.html#model-bias-and-variance)  
+- [Master Shiny with R](https://mastering-shiny.org/)  
+- [Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/)  
+- []()
+
+
+### 生物信息
+
+- [生信常用网站导航](https://gwaslab.com/navigation/)  
+- [生信编程框架](https://gwaslab.com/programming/)  
+- []()  
+
+
+### 电子书下载
+
+- [鸠摩电子书下载](https://www.jiumodiary.com/)  
+- [全球最大的数字图书馆：Z-library](https://pangniao.net/z-library-zui-xin-di-zhi.html)  
+- [Bookdown开放书籍](https://bookdown.org)  
+- [机器学习实战：使用R、tidyverse和mlr](https://book.douban.com/subject/35488867/?_dtcc=1)  
+
+### 后端开发
+
+- [GoLang全栈](https://hao.golangstack.com/)  
+- []()
+
+
+### 向往的达人
+
+- [R数据科学家-刘思喆](https://bjt.name/2015/12/12/spark-or-r.html)  
+  - [数据科学家能力素质模型](https://bjt.name/2021/09/28/statistician.html)  
+- [统计之都](https://cosx.org/)  
+- [Yixuan Qiu 上财教师](https://statr.me/categories/)  
+- [怡然轩](https://yixuan.blog/cn/)  
+- [黄湘云](https://xiangyun.rbind.io/)  
+  - [符号计算与 R 语言](https://xiangyun.rbind.io/2016/07/r-symbol-calculate/)  
+  - [开发企业级 Shiny 应用的技术栈](https://xiangyun.rbind.io/2021/08/shiny-in-production/)  
+- [王诗翔](https://www.jianshu.com/u/b6608e27dc74)  
+
+### 数据科学拓展
+
+- [数据科学家的职业路径是什么?(EN)](https://www.business-science.io/careers/2022/03/15/the-data-science-career-path.html)  
+- [数据科学家的职业路径是什么?(CH)](https://zhuanlan.zhihu.com/p/502353533)  
+- [R语言必学之「data.table」学习资源合集](https://zhuanlan.zhihu.com/p/346366577)  
+- [R数据处理|data.table篇（一）](https://zhuanlan.zhihu.com/p/26388833)  

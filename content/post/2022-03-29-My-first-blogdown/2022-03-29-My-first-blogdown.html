@@ -23,12 +23,17 @@ tags: ["blogdown"]
 <pre class="r"><code>install.packages(&#39;blogdown&#39;)
 library(blogdown)
 blogdown::hugo_version() # check if hugo exist and version, if not then download
-blogdown::install_hugo() </code></pre>
+blogdown::install_hugo() # 有时候出现无法下载的情况，则blogdown::install_hugo(force = TRUE)</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>配置website文件夹下的环境/主题
-在<a href="https://themes.gohugo.io/"><strong><em>Hugo主页</em></strong></a>中选择主题并载入</li>
+在<a href="https://themes.gohugo.io/"><strong>Hugo主页</strong></a>中选择主题并载入</li>
 </ol>
-<pre class="r"><code>new_site(theme = &#39;zhaohuabing/hugo-theme-cleanwhite&#39;)
+<pre class="r"><code># 主题选择
+# 备选https://themes.gohugo.io/themes/hugo-elate-theme/
+# https://github.com/saey55/hugo-elate-theme
+
+# https://github.com/zhaohuabing/hugo-theme-cleanwhite
+new_site(theme = &#39;zhaohuabing/hugo-theme-cleanwhite&#39;)
 # Stop Server and Start Server
 stop_server()
 serve_site()</code></pre>
@@ -36,13 +41,14 @@ serve_site()</code></pre>
 <li>在RStudio files下打开.gitgnore文件</li>
 </ol>
 <pre class="r"><code>check_gitignore()
-# 根据反馈的[Todo]信息在.gitgnore中添加
+# 根据反馈要求取做，回显示需要完成的步骤
+# 根据反馈的[Todo]信息，需要在.gitgnore中添加（PS:每个人的情况可能略有不同）
     .DS_Store
     Thumbs.db
     /public
     /resources
 check_content()
-# 得到Great! 信息，则一切顺利
+# 得到Great! 信息，则一切顺利；如果未出现，则查看返回上一步查看需要待做事项
 # 至此，我们的project都为website</code></pre>
 </div>
 <div id="rstudio通过shell控制github版本" class="section level3">
@@ -59,16 +65,16 @@ git add -A # 所有本地website文件同步至github</code></pre>
 <li>点击绿色Push提交，得到 HEAD -&gt; main反馈，可以去github下查看是否更新</li>
 </ol>
 </div>
-<div id="配置netlify" class="section level3">
-<h3>配置netlify</h3>
+<div id="配置netlify2" class="section level3">
+<h3>配置netlify<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></h3>
 <ol style="list-style-type: decimal">
-<li>打开Netlify网页并通过github登录<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></li>
+<li>打开Netlify网页并通过github登录</li>
 <li>Add New Site &gt; Import Exsiting Project &gt; 选择github &gt; 通过授权选择对应的website repository &gt; Show Advanced &gt; New Varible 输入hugo version对应信息 &gt; Deploy(部署)</li>
 <li>页面上方可看到你的个人网页链接，然后可以选择change site name</li>
 <li>成功部署<a href="https://shuqiang.netlify.app/">个人博客</a></li>
 <li>编辑config.yarm文件，修改baseurl:: ####为你的博客链接</li>
 </ol>
-<pre class="shell"><code># git提交报错10054，在website文件夹下打开git bash命令
+<pre class="r"><code># git提交报错10054，在website文件夹下打开git bash命令
 # 取消http代理
 git config --global --unset http.proxy
 # 取消https代理 
@@ -82,7 +88,6 @@ git config --global --unset https.proxy
 <ul>
 <li><a href="http://rmarkdown.rstudio.com/index.html">Rmarkdown</a></li>
 <li><a href="https://www.rstudio.com/resources/cheatsheets/">Cheat Sheet</a></li>
-<li><a href="https://www.tidymodels.org/">Tidymodels</a></li>
 <li><a href="https://themes.gohugo.io/themes/cayman-hugo-theme/">themes/cayman-hugo-theme</a></li>
 <li><a href="https://www.bilibili.com/video/BV1gL411A71J/?spm_id_from=333.788">B站blogdown教学</a></li>
 <li><a href="https://pzhao.org/zh/post/r-blogdown/">参考网址</a></li>

@@ -1,0 +1,135 @@
+---
+title: Rmarkdown和Code Chunk详解
+author: Shuqiang
+date: '2022-07-28'
+slug: []
+categories:
+  - R
+toc: TRUE
+tags:
+  - Rmarkdown
+subtitle: ''
+description: ''
+image: ''
+---
+
+## yyds rmarkdown
+
+.Rmd文件的好处：
+
+  - 结合了markdown和R/Python代码
+  
+  - 代码/文本/图表复现，适合用来作报告
+  
+  - 直接控制台rmarkdown::render(“XXX.rmd”)，生成word/pdf/beamer/html文档
+  
+  - 该语法也用于blogdown和bookdown
+  
+---
+
+## rmarkdown语法：文本
+
+- 下列示例中，左边为**实际效果**，右边为**rmd语法**  
+- 简单文本  
+- (在字段末尾添加2个空格  
+- 可以另起一行)
+- *斜体*：\*斜体\*  
+- **加粗**：\*\*加粗\*\*  
+- superscript^2^/subscript~2~：superscript\^2\^\/subscript\~2\~  
+- ~~strikethrough~~：\~\~strikethrough\~\~  
+- 转义符: \* \_ \\：\\*  
+- Header 1：用#的个数表示几级标题 
+- 无序列表： \- 无序列表  
+- 1.有序列表： 1. 有序列表
+- <http://www.rstudio.com/>：\<链接地址\>
+- [链接内容](链接地址)：\[链接内容]\(链接地址)  
+- ![Caption]()：!\[Caption]\(image.png)  
+- `verbatim code`： \`verbatim code\`  
+- ```  
+multiple lines
+of verbatim code  专门的代码块
+```
+- > block quotes：\> block quotes  
+- equation: $e^{i \pi} + 1 = 0$  
+-  Right | Left | Default | Center | 
+|-------:|:------|-----------|:---------:|
+|-------\:|\:------|-----------|\:---------\:|
+| 12 | 12 | 12 | 12 | 
+| 123 | 123 | 123 | 123 | 
+| 1 | 1 | 1 | 1 |
+
+- horizontal rule:  一条横线分割，3个 - ，如：\-\-\-  
+
+---  
+
+
+## Code Chunk：对其运行、代码展示、输出等内容进行控制
+
+
+<style>
+table th:first-of-type {
+    width: 3cm;
+}
+table th:nth-of-type(2) {
+    width: 2cm;
+}
+table th:nth-of-type(3) {
+    width: 5cm;
+}
+table th:nth-of-type(4) {
+    width: 4cm;
+}
+</style>
+
+| OPTION  <div style="width:15px">   |  DEFAULT <div style="width:10px"> | EFFECTS  <div style="width:40px">|  中文解释 <div style="width:35px"> |
+|:----------|:----------|:------------|:---------| 
+|echo       |TRUE       |display code in output document|输出显示代码|
+|error      |FALSE      |**TRUE** (display error messages in doc) <br> **FALSE** (stop render when error occurs)| **TRUE**(输出显示报错) <br> **FALSE**(出现报错则停止render)|
+|eval       |TRUE     |run code in chunk                | 运行代码块 |
+|include    |TRUE     |include chunk in doc after running| 运行后输出中显示代码，相当于echo/eval的结合体|
+|message    |TRUE     |display code messages in document| 输出中显示提示信息|
+|warning    |TRUE     |display code warnings in document| 输出中显示警告信息|
+|results    |"markup" |"asis" (passthrough results)  <br>  "hide" (don't display results)  <br>  "hold" (put all results below all code)| **没试过??待定** |
+|fig.align  |"default"| "left", "right", or "center"| 图片输出位置 |
+|fig.alt    |NULL     |alt text for a figure| **没试过??待定** |
+|fig.cap    |NULL     |figure caption as a character string| 图片索引来源 |
+|fig.path   |"figure/" |prefix for generating figure file paths| 图片宽度 |
+|fig.width & fig.height |7 |plot dimensions in inches| 图片高宽 |
+|out.width  |         |rescales output width, e.g. "75%", "300px"| **修改输出宽度** |
+|collapse   |FALSE    |collapse all sources & output into a single block| 将所有输出放在一个单独块中 |
+|comment    |"##"     |prefix for each line of results| **没试过??待定** |
+|child      |NULL     |files(s) to knit and then include| **没试过??待定** |
+|purl       |TRUE     |include or exclude a code chunk when extracting source code with knitr::purl()| **没试过??待定** |
+
+```
+See more options and defaults by running str(knitr::opts_chunk$get())
+设置code chunk全局参数knitr::opts_chunk$get()
+```
+
+
+## YAML选项：输出html/word/ppt/beamer等等
+
+```{r eval = FALSE}
+library(rmarkdown)
+# 输入`?html_document`打开新世界
+?html_document
+尝试将参数toc修改下，输出文档中会添加一个目录
+
+##### prettydoc package
+title: "Your Document Title"
+author: "Document Author"
+date: "`r Sys.Date()`"
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
+```
+
+---
+
+> **参考资料**  
+- [`rmarkdown-Cheatsheet`](https://www.rstudio.com/resources/cheatsheets/)  
+- [`Rmarkdown`](http://rmarkdown.rstudio.com/index.html)  
+- [`Markdown改变表格列宽方法一`](https://zhuanlan.zhihu.com/p/93239297)  
+- [`Markdown改变表格列宽方法二`](https://blog.zhheo.com/p/2307e72f.html)  
+- [`基于 R Markdown 的演示文稿和报告模板使用经验`](https://cosx.org/2019/06/r-markdown-slides-ljj/)

@@ -1,0 +1,117 @@
+---
+title: R包安装、路径和管理
+author: Shuqiang
+date: '2022-07-28'
+slug: R包安装、路径和管理
+categories:
+  - R
+tags:
+  - package
+subtitle: ''
+description: ''
+image: ''
+---
+### Code Chunk全局环境设置
+
+```{r eval=TRUE, message=FALSE}
+library(tidyverse)
+
+# 管理全局code chunk运行方式：是否输出？是否显示代码？是否运行代码？
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+```
+
+
+### R包安装
+
+```{r}
+library(tidyverse)
+
+
+# 经常遇见R包安装的问题，这里推荐使用pacman/devtools/install.packages进行安装
+pacman::p_load()           # 加载包，如果包未下载则自动安装
+pacman::p_unload()         # 将已加载的包从环境中去除
+pacman::p_unload("dplyr")  # 将dplyr包从当前环境中去除（即RStudio > Enviroment,可查看已加载的包）
+pacman::p_unload(pacman::p_loaded(), character.only = TRUE) # 出去环境中所有的包
+
+devtools::install_gitlab() # Gitlab安装
+devtools::install_github() # Github安装
+devtools::install_local()  # 本地安装
+devtools::install_bioc()   # 安装生物信息相关包
+
+```
+
+### 查看已安装包、路径和版本信息
+
+```{r}
+# 获取服务器中本地下载的包
+library()
+installed.packages() %>% 
+  as_tibble() %>% 
+  select(1:3)     # 查看已安装包名称/安装路径/版本/
+
+# 包安装路径选择
+.libPaths()       # 3个安装路径，自动默认选择第一个/home/xsq/R/x86_64-redhat-linux-gnu-library/3.6
+.Library
+.Library.site
+
+
+
+# 因此，用户在使用服务器的过程中，可能存在版本较低的问题,需要在/home/user_name/R/x86_64-redhat-linux-gnu-library/3.6 中安装包，因为root目录下用户一般没有修改权限
+# 在安装包的时候指定安装路径，有时候加载的时候也可以指定路径
+
+install.packages("cli", lib = .libPaths()[1])
+# 安装后服务器中可能存在2个版本的包，不过所在路径不同
+#   Package LibPath                                         Version
+#   <chr>   <chr>                                           <chr>  
+# 1 cli     /home/xsq/R/x86_64-redhat-linux-gnu-library/3.6 3.3.0  
+# 2 cli     /usr/lib64/R/library                            3.1.0 
+
+
+packageVersion("cli")        # 查看调用包的版本,可以指定.libPaths()的路径
+packageVersion("cli", lib.loc = NULL)        # 查看调用包的版本,可以指定.libPaths()的路径
+
+```
+
+### R帮助文档
+
+```{r}
+vignette(`直接tab建，不要引号`) >>>> vignette(Tab)
+vignette("dplyr")
+
+help("dplyr")
+??dplyr
+?filter
+```
+### 查看系统信息和内存管理
+```{r eval=FALSE}
+utils::sessionInfo()
+utils::available.packages()
+utils::osVersion
+utils::news()
+news()
+
+library(sessioninfo)
+#同utils::sessionInfo()相似，但含有更多关于package的信息，其安装路径
+sessioninfo::session_info()
+sessionInfo()
+session_info(to_file = "session.log") # 可以看环境中的包版本等信息
+sessioninfo::session_info(info = "external")
+sessioninfo::session_info(info = "python")
+sessioninfo::session_diff(new = "https://github.com/r-lib/sessioninfo/issues/6")
+clipr::write_clip(session_info()) ## 复制session info内容至粘贴板，感觉挺实用的
+
+
+rm()
+gc()
+
+```
+
+
+---  
+
+>**参考资料**  
+- [`Rmarkdown`](http://rmarkdown.rstudio.com/index.html)  
+- [`sessioninfo`](https://r-lib.github.io/sessioninfo/index.html)  
+- [R内存管理和垃圾清理](https://www.cnblogs.com/xuancaoyy/p/5449172.html)  
+- []()  
+- []()

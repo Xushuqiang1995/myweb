@@ -1,5 +1,5 @@
 ---
-title: R 实用函数（加强学习）
+title: R 复习函数（加强学习）
 author: Shuqiang
 date: '2022-04-26'
 slug: []
@@ -13,7 +13,7 @@ description: '实用的R函数，需要多看巩固；从别人脚本那学来�
 image: ''
 
 ---
-```{r setup, eval=FALSE}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(cache = TRUE, warning = FALSE,
                       message = FALSE, echo = TRUE, 
                       eval=FALSE,
@@ -60,8 +60,8 @@ iris %>%
 #   juice()
 
 # PCA画图添加点的标签
-ggplot(aes(x = PC1, y = PC2, labels = VAR)) +
-  geom_text(check_overlap = TRUE, family = 'IBMPlexSans-Bold', hjust = 'inward')
+# ggplot(aes(x = PC1, y = PC2, labels = VAR)) +
+#   geom_text(check_overlap = TRUE, family = 'IBMPlexSans-Bold', hjust = 'inward')
 # silgelib::theme_plex 选择
 # umap降维，?embed::step_umap()
 ##########
@@ -83,4 +83,23 @@ ggplot(aes(x = PC1, y = PC2, labels = VAR)) +
 # https://www.jianshu.com/p/580395598150
 ```
 
+```{r eval=TRUE}
+# 给指定列批量操作，如得到每列的排序顺序
+
+data <- tibble(
+商品名称 = c("飞机","坦克","火车","汽车","电脑","微波炉","电冰箱"),
+"20201" = c(1148180,936847.03,756678.94,661634.81,517844.34,515342.05,402535.4),
+"20202" = c(724438,394463.6,299565.12,218171.05,77576.46,238128.77,84461.59),
+"20203" = c(806344,599225.03,348673.68,287861.24,398617.05,294147.36,122243.58),
+"20204" = c(1148928,985200.86,612672.88,576676.61,941509.14,520207.97,351694.72),
+"20205" = c(1267112,509108.92,529845.63,831958.88,877673.16,362104.54,371722.34))
+
+data %>% 
+  mutate_if(is.numeric, list(rank = ~order(., decreasing = T))) %>% 
+  colnames()
+
+data %>% 
+  mutate(across(-1, ~rank(-.x), .names = "{.col}_rank")) %>% 
+  head(2)
+```
 

@@ -1,5 +1,5 @@
 ---
-title: R 实用函数（加强学习）
+title: R 复习函数（加强学习）
 author: Shuqiang
 date: '2022-04-26'
 slug: []
@@ -16,12 +16,6 @@ image: ''
 
 
 
-<pre class="r"><code>knitr::opts_chunk$set(cache = TRUE, warning = FALSE,
-                      message = FALSE, echo = TRUE, 
-                      eval=FALSE,
-                      dpi = 180, fig.width = 8, fig.height = 5)
-library(tidyverse)
-library(&#39;tidytext&#39;)</code></pre>
 <p>好滴 ~ 谢谢 ~ 那我感觉自己还需要再补充些shiny开发的知识、生信分析流程掌握；</p>
 <pre class="r"><code># parse_number: 直接提取第一个数字
 parse_number(x = c(&#39;16.8 OA&#39;, &#39;18 OA&#39;))
@@ -52,8 +46,8 @@ iris %&gt;%
 #   juice()
 
 # PCA画图添加点的标签
-ggplot(aes(x = PC1, y = PC2, labels = VAR)) +
-  geom_text(check_overlap = TRUE, family = &#39;IBMPlexSans-Bold&#39;, hjust = &#39;inward&#39;)
+# ggplot(aes(x = PC1, y = PC2, labels = VAR)) +
+#   geom_text(check_overlap = TRUE, family = &#39;IBMPlexSans-Bold&#39;, hjust = &#39;inward&#39;)
 # silgelib::theme_plex 选择
 # umap降维，?embed::step_umap()
 ##########
@@ -69,3 +63,30 @@ ggplot(aes(x = PC1, y = PC2, labels = VAR)) +
 # https://zhuanlan.zhihu.com/p/354086571</code></pre>
 <pre class="r"><code># 生信分析火山图：双曲线图，不同于以往的线性划分
 # https://www.jianshu.com/p/580395598150</code></pre>
+<pre class="r"><code># 给指定列批量操作，如得到每列的排序顺序
+
+data &lt;- tibble(
+商品名称 = c(&quot;飞机&quot;,&quot;坦克&quot;,&quot;火车&quot;,&quot;汽车&quot;,&quot;电脑&quot;,&quot;微波炉&quot;,&quot;电冰箱&quot;),
+&quot;20201&quot; = c(1148180,936847.03,756678.94,661634.81,517844.34,515342.05,402535.4),
+&quot;20202&quot; = c(724438,394463.6,299565.12,218171.05,77576.46,238128.77,84461.59),
+&quot;20203&quot; = c(806344,599225.03,348673.68,287861.24,398617.05,294147.36,122243.58),
+&quot;20204&quot; = c(1148928,985200.86,612672.88,576676.61,941509.14,520207.97,351694.72),
+&quot;20205&quot; = c(1267112,509108.92,529845.63,831958.88,877673.16,362104.54,371722.34))
+
+data %&gt;% 
+  mutate_if(is.numeric, list(rank = ~order(., decreasing = T))) %&gt;% 
+  colnames()</code></pre>
+<pre><code>##  [1] &quot;商品名称&quot;   &quot;20201&quot;      &quot;20202&quot;      &quot;20203&quot;      &quot;20204&quot;     
+##  [6] &quot;20205&quot;      &quot;20201_rank&quot; &quot;20202_rank&quot; &quot;20203_rank&quot; &quot;20204_rank&quot;
+## [11] &quot;20205_rank&quot;</code></pre>
+<pre class="r"><code>data %&gt;% 
+  mutate(across(-1, ~rank(-.x), .names = &quot;{.col}_rank&quot;)) %&gt;% 
+  head(2)</code></pre>
+<pre><code>## # A tibble: 2 × 11
+##   商品名称  `20201` `20202` `20203`  `20204`  `20205` 20201_ra…¹ 20202…² 20203…³
+##   &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 飞机     1148180  724438  806344  1148928  1267112           1       1       1
+## 2 坦克      936847. 394464. 599225.  985201.  509109.          2       2       2
+## # … with 2 more variables: `20204_rank` &lt;dbl&gt;, `20205_rank` &lt;dbl&gt;, and
+## #   abbreviated variable names ¹​`20201_rank`, ²​`20202_rank`, ³​`20203_rank`
+## # ℹ Use `colnames()` to see all variable names</code></pre>
