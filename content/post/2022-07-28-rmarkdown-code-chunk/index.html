@@ -13,6 +13,15 @@ description: ''
 image: ''
 ---
 
+<script src="{{< blogdown/postref >}}index_files/htmlwidgets/htmlwidgets.js"></script>
+<link href="{{< blogdown/postref >}}index_files/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+<script src="{{< blogdown/postref >}}index_files/datatables-binding/datatables.js"></script>
+<script src="{{< blogdown/postref >}}index_files/jquery/jquery-3.6.0.min.js"></script>
+<link href="{{< blogdown/postref >}}index_files/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="{{< blogdown/postref >}}index_files/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="{{< blogdown/postref >}}index_files/dt-core/js/jquery.dataTables.min.js"></script>
+<link href="{{< blogdown/postref >}}index_files/crosstalk/css/crosstalk.min.css" rel="stylesheet" />
+<script src="{{< blogdown/postref >}}index_files/crosstalk/js/crosstalk.min.js"></script>
 
 <div id="TOC">
 
@@ -78,24 +87,18 @@ of verbatim code  专门的代码块</code></pre></li>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">——-:</td>
-<td align="left">:——</td>
-<td>———–</td>
-<td align="center">:———:</td>
-</tr>
-<tr class="even">
 <td align="right">12</td>
 <td align="left">12</td>
 <td>12</td>
 <td align="center">12</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="right">123</td>
 <td align="left">123</td>
 <td>123</td>
 <td align="center">123</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="right">1</td>
 <td align="left">1</td>
 <td>1</td>
@@ -179,7 +182,7 @@ table th:nth-of-type(4) {
 <td align="left">results</td>
 <td align="left">“markup”</td>
 <td align="left">“asis” (passthrough results) <br> “hide” (don’t display results) <br> “hold” (put all results below all code)</td>
-<td align="left"><strong>没试过??待定</strong></td>
+<td align="left">“asis”使代码模拟Markdown语法 <br> <strong>没试过??待定</strong></td>
 </tr>
 <tr class="even">
 <td align="left">fig.align</td>
@@ -243,8 +246,24 @@ table th:nth-of-type(4) {
 </tr>
 </tbody>
 </table>
-<pre><code>See more options and defaults by running str(knitr::opts_chunk$get())
-设置code chunk全局参数knitr::opts_chunk$get()</code></pre>
+<pre class="r"><code># See more options and defaults by running str(knitr::opts_chunk$get())
+# 设置code chunk全局参数knitr::opts_chunk$get()
+a &lt;- knitr::opts_chunk$get() %&gt;%
+  unlist() %&gt;% 
+  as.data.frame() %&gt;% 
+  rlang::set_names(&quot;default&quot;)
+# knitr::kable(a)
+# flextable::flextable(a)
+
+# Ref:https://haozhu233.github.io/kableExtra/awesome_table_in_html_cn.html#%E5%AE%89%E8%A3%85
+# kable(a, &quot;html&quot;) %&gt;%
+#   kable_styling() %&gt;%
+#   scroll_box(width = &quot;500px&quot;, height = &quot;200px&quot;,     )
+
+# Ref:https://rstudio.github.io/DT/
+DT::datatable(a, options = list(pageLength = 5))</code></pre>
+<div id="htmlwidget-1" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"filter":"none","vertical":false,"data":[["eval","echo","results","tidy","collapse","prompt","comment","highlight","size","background","strip.white","cache","cache.path","cache.lazy","autodep","cache.rebuild","fig.keep","fig.show","fig.align","fig.path","dev","dpi","fig.width","fig.height","fig.env","fig.lp","fig.pos","fig.retina","external","sanitize","interval","aniopts","warning","error","message","engine","split","include","purl"],["TRUE","TRUE","markup","FALSE","FALSE","FALSE","##","TRUE","normalsize","#F7F7F7","TRUE","FALSE","index_cache/html/","TRUE","FALSE","FALSE","high","asis","default","index_files/figure-html/","png","96","7","5","figure","fig:","","2","TRUE","FALSE","1","controls,loop","TRUE","FALSE","FALSE","R","FALSE","TRUE","TRUE"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>default<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"columnDefs":[{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="yaml选项输出htmlwordpptbeamer等等" class="section level2">
 <h2>YAML选项：输出html/word/ppt/beamer等等</h2>
@@ -268,6 +287,8 @@ output:
 - <a href="http://rmarkdown.rstudio.com/index.html"><code>Rmarkdown</code></a><br />
 - <a href="https://zhuanlan.zhihu.com/p/93239297"><code>Markdown改变表格列宽方法一</code></a><br />
 - <a href="https://blog.zhheo.com/p/2307e72f.html"><code>Markdown改变表格列宽方法二</code></a><br />
-- <a href="https://cosx.org/2019/06/r-markdown-slides-ljj/"><code>基于 R Markdown 的演示文稿和报告模板使用经验</code></a></p>
+- <a href="https://cosx.org/2019/06/r-markdown-slides-ljj/"><code>基于 R Markdown 的演示文稿和报告模板使用经验</code></a>
+- <a href="https://gt.rstudio.com/"><code>rmarkdown/html/shiny 表格输出</code></a><br />
+- <a href="https://bookdown.org/yihui/rmarkdown-cookbook/html-scroll.html"><code>R markdown Cookbook</code></a></p>
 </blockquote>
 </div>

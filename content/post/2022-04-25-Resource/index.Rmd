@@ -4,7 +4,7 @@ author: Shuqiang
 date: '2022-04-25'
 slug: []
 categories:
-  - R
+  - resource
 tags:
   - Bio
   - Programing
@@ -17,14 +17,13 @@ image: ''
 ### R
 
 - [Julia Silge的个人Blog](https://juliasilge.com/blog/)：通过例子呈现数据分析  
+- [`Tidy Modeling with R(tidymodels)`](https://www.tmwr.org/)：通过例子呈现数据分析  
 - [TidyTuesday data set](https://github.com/rfordatascience/tidytuesday)  
 - [TidyTuesday 实例脚本](https://hardin47.github.io/TidyTuesday/2022-03-22/babynames.html)  
 - [mlr3社区](https://mlr3.mlr-org.com/)  
-- [mlr3 manual book](https://mlr3book.mlr-org.com/mlr3book.pdf)  
-- [R code chunk(代码块控制选项)](https://cloud.tencent.com/developer/article/1805479)  
-- [特征工程和选择：预测模型的实用方法-R](https://bookdown.org/max/FES/important-concepts.html#model-bias-and-variance)  
-- [Master Shiny with R](https://mastering-shiny.org/)  
-- [Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/)  
+- [RStudio AI Blog](https://blogs.rstudio.com/ai/)  
+- [RStudio Books](https://www.rstudio.com/resources/books/)  
+- [R webinars(视频)](https://www.rstudio.com/resources/webinars/)  
 - []()
 
 
@@ -69,4 +68,23 @@ image: ''
 - [在 R 中实现流程图](https://bjt.name/2009/02/21/r-flow-chart.html)  
 - [统计之都：中国R语言会议](https://space.bilibili.com/22035559?spm_id_from=333.337.search-card.all.click)  
 - [CSDN大数据技术大会](https://space.bilibili.com/217475729?spm_id_from=333.337.0.0)  
+
+
+#### 阅读记录(done)
+
+> 
+- [生死疲劳]()  
+- [人类简史]()  
+
+#### 阅读记录(ing)
+
+> 
+- [Python 数据科学手册 by Jake VanderPlas]()  
+- [Master Shiny with R](https://mastering-shiny.org/)  
+- [Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/)  
+- [特征工程和选择：预测模型的实用方法-R](https://bookdown.org/max/FES/important-concepts.html#model-bias-and-variance)  
+- [Supervised Machine Learning for Text Analysis in R](https://smltar.com/)  
+- [Welcome to Text Mining with R](https://www.tidytextmining.com/)  
+- [mlr3 manual book](https://mlr3book.mlr-org.com/mlr3book.pdf)  
+- [Advanced R(高级R语言编程)](https://adv-r.hadley.nz/S3.html)  
 

@@ -13,6 +13,13 @@ description: ''
 image: ''
 ---
 
+```{r, include=FALSE}
+library(rmarkdown)
+library(tidyverse)
+library(kableExtra)
+knitr::opts_chunk$set(message = FALSE)
+```
+
 ## yyds rmarkdown
 
 .Rmd文件的好处：
@@ -51,12 +58,12 @@ of verbatim code  专门的代码块
 ```
 - > block quotes：\> block quotes  
 - equation: $e^{i \pi} + 1 = 0$  
--  Right | Left | Default | Center | 
-|-------:|:------|-----------|:---------:|
-|-------\:|\:------|-----------|\:---------\:|
-| 12 | 12 | 12 | 12 | 
-| 123 | 123 | 123 | 123 | 
-| 1 | 1 | 1 | 1 |
+- 
+|Right    | Left  | Default   | Center  | 
+|--------:|:------|-----------|:-------:|
+| 12      | 12    | 12        |   12    | 
+| 123     | 123   | 123       |   123   | 
+| 1       | 1     | 1         |   1     |
 
 - horizontal rule:  一条横线分割，3个 - ，如：\-\-\-  
 
@@ -64,7 +71,6 @@ of verbatim code  专门的代码块
 
 
 ## Code Chunk：对其运行、代码展示、输出等内容进行控制
-
 
 <style>
 table th:first-of-type {
@@ -89,7 +95,7 @@ table th:nth-of-type(4) {
 |include    |TRUE     |include chunk in doc after running| 运行后输出中显示代码，相当于echo/eval的结合体|
 |message    |TRUE     |display code messages in document| 输出中显示提示信息|
 |warning    |TRUE     |display code warnings in document| 输出中显示警告信息|
-|results    |"markup" |"asis" (passthrough results)  <br>  "hide" (don't display results)  <br>  "hold" (put all results below all code)| **没试过??待定** |
+|results    |"markup" |"asis" (passthrough results)  <br>  "hide" (don't display results)  <br>  "hold" (put all results below all code)| "asis"使代码模拟Markdown语法 <br> **没试过??待定** |
 |fig.align  |"default"| "left", "right", or "center"| 图片输出位置 |
 |fig.alt    |NULL     |alt text for a figure| **没试过??待定** |
 |fig.cap    |NULL     |figure caption as a character string| 图片索引来源 |
@@ -101,15 +107,31 @@ table th:nth-of-type(4) {
 |child      |NULL     |files(s) to knit and then include| **没试过??待定** |
 |purl       |TRUE     |include or exclude a code chunk when extracting source code with knitr::purl()| **没试过??待定** |
 
-```
-See more options and defaults by running str(knitr::opts_chunk$get())
-设置code chunk全局参数knitr::opts_chunk$get()
+
+```{r, eval = TRUE}
+
+# See more options and defaults by running str(knitr::opts_chunk$get())
+# 设置code chunk全局参数knitr::opts_chunk$get()
+a <- knitr::opts_chunk$get() %>%
+  unlist() %>% 
+  as.data.frame() %>% 
+  rlang::set_names("default")
+# knitr::kable(a)
+# flextable::flextable(a)
+
+# Ref:https://haozhu233.github.io/kableExtra/awesome_table_in_html_cn.html#%E5%AE%89%E8%A3%85
+# kable(a, "html") %>%
+#   kable_styling() %>%
+#   scroll_box(width = "500px", height = "200px",     )
+
+# Ref:https://rstudio.github.io/DT/
+DT::datatable(a, options = list(pageLength = 5))
 ```
 
 
 ## YAML选项：输出html/word/ppt/beamer等等
 
-```{r eval = FALSE}
+```{r, eval = FALSE}
 library(rmarkdown)
 # 输入`?html_document`打开新世界
 ?html_document
@@ -133,3 +155,5 @@ output:
 - [`Markdown改变表格列宽方法一`](https://zhuanlan.zhihu.com/p/93239297)  
 - [`Markdown改变表格列宽方法二`](https://blog.zhheo.com/p/2307e72f.html)  
 - [`基于 R Markdown 的演示文稿和报告模板使用经验`](https://cosx.org/2019/06/r-markdown-slides-ljj/)
+- [`rmarkdown/html/shiny 表格输出`](https://gt.rstudio.com/)  
+- [`R markdown Cookbook`](https://bookdown.org/yihui/rmarkdown-cookbook/html-scroll.html)  
