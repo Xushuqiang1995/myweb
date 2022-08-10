@@ -1,0 +1,56 @@
+---
+title: Color Pallet(调色板)
+author: Shuqiang
+date: '2022-08-10'
+slug: []
+categories:
+  - R
+tags:
+  - 调色板
+  - R
+subtitle: ''
+
+description: '绘制图形，选择elegant颜色是一个非常有技巧、难度的事，统计绘图配上美观的颜色，让人心情愉悦，并且更能吸引读者'
+
+image: ''
+---
+
+
+
+<div id="调色板" class="section level3">
+<h3>调色板</h3>
+<pre class="r"><code># ggsci基于ggplot2的颜色主题包，常为科学期刊、科幻电影配色，仅展示科学期刊配色
+# 查看配色详情
+vignette( &quot;ggsci&quot;)
+
+# 通过scale_color_***函数调整配色，其中***有多重选项npg/aaas/jama/lancet/gsea等等
+scale_color_npg
+scale_fill_npg</code></pre>
+</div>
+<div id="rcolorbrewer" class="section level3">
+<h3>RColorBrewer</h3>
+<pre class="r"><code>RColorBrewer::display.brewer.all()
+display.brewer.all(type= &quot;seq&quot;)
+display.brewer.all(type= &quot;qual&quot;)
+display.brewer.all(type= &quot;div&quot;)
+
+scale_fill_manual(values=rev(brewer.pal(11, &quot;Spectral&quot;)))</code></pre>
+</div>
+<div id="shiny控件汇总" class="section level3">
+<h3>Shiny控件汇总</h3>
+<pre class="r"><code># 常用控件
+shinyWidgets::shinyWidgetsGallery()
+
+# 颜色挑选控件。远行后点击 exanple.R，可查看源脚本
+shinyWidgets::colorSelectorExample()
+
+# 画板颜色挑选
+colourpicker::runExample()</code></pre>
+<blockquote>
+<p>参考资料
+- <a href="https://www.jianshu.com/p/14b47f89b67e">R语言调色板汇总</a><br />
+- <a href="https://zhuanlan.zhihu.com/p/445317403">R语言调色板集合 - 黄天元</a><br />
+- <a href=""></a><br />
+- <a href=""></a></p>
+</blockquote>
+</div>
