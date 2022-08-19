@@ -103,3 +103,32 @@ data %>%
   head(2)
 ```
 
+
+## purrr包
+
+这个包真的是精髓呀，需要重复学习使用
+
+```{r eval =TRUE}
+# 合并多个数组，求多个集合的共同交集
+# 可能会考虑使用递归函数，这里介绍使用purrr函数
+
+purrr::reduce(.x = list(1:3, 4:6, 7:9), .f = union)
+
+purrr::reduce(.x = list(1:3, 2:5, 3:6 ), .f = intersect)
+
+
+```
+
+```{r eval=FALSE}
+tidyverse::tidyverse_packages()
+tidyverse::tidyverse_sitrep()
+tidyverse::tidyverse_logo()
+tidyverse::tidyverse_deps()
+library(usethis)
+library(devtools)
+use_devtools()
+use_github()
+a <- 1
+checkmate::assert_number(x = a)
+```
+

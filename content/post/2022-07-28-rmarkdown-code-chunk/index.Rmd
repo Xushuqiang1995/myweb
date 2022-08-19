@@ -128,6 +128,7 @@ a <- knitr::opts_chunk$get() %>%
 DT::datatable(a, options = list(pageLength = 5))
 ```
 
+---
 
 ## YAML选项：输出html/word/ppt/beamer等等
 
@@ -157,3 +158,4 @@ output:
 - [`基于 R Markdown 的演示文稿和报告模板使用经验`](https://cosx.org/2019/06/r-markdown-slides-ljj/)
 - [`rmarkdown/html/shiny 表格输出`](https://gt.rstudio.com/)  
 - [`R markdown Cookbook`](https://bookdown.org/yihui/rmarkdown-cookbook/html-scroll.html)  
+- [R markdown进阶(慕课教程)](https://www.imooc.com/wiki/markdownlesson/markdowntodolist.html)

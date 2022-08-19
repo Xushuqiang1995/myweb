@@ -1,0 +1,41 @@
+---
+title: Shiny(1)
+author: shuqiang
+date: '2022-08-18'
+slug: []
+categories:
+  - R
+tags:
+  - shiny
+subtitle: ''
+description: ''
+image: ''
+---
+
+```{r include=FALSE}
+library(knitr)
+opts_chunk$set(eval = FALSE)
+```
+
+## Shiny常用控件及功能\
+真的就是这样的吗
+
+---
+
+# Shiny常用控件及功能\
+真的就是这样的吗
+
+
+
+
+```{r }
+# 常用控件展示
+shinysky::run.shinysky.example()
+shinyWidgets::
+  
+library(shinysky)
+shinysky::run.shinysky.example()
+
+```
+
+

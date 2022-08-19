@@ -1,0 +1,50 @@
+---
+title: CSS初识
+author: shuqiang
+date: '2022-08-16'
+slug: []
+categories:
+  - 前端
+tags:
+  - css
+subtitle: ''
+description: ''
+image: ''
+---
+
+# CSS
+
+#### 全局选择器 
+*{} 
+
+#### 元素选择器 
+p,h3{} 
+
+#### ID选择器 
+
+\#id_name{} \
+实现添加css样式：# + 'ID名称' \
+只能实现一次\
+ID是唯一的\
+ID不能以数字开头\
+
+#### 合并选择器 
+作用：提取共同样式，减少重复代码\
+对多个元素添加一样的样式，使用逗号隔开
+
+
+#### 类选择器 
+.class_属性名1,.class_属性名2{}
+
+#### 选择器的优先级 
+CSS中，权重用数字衡量
+元素选择器的权重： 1 
+class选择器的权重：10 
+id选择器的权重：   100 
+内联样式的权重：   1000 
+优先级从高到低：行内样式 > ID选择器 > 类选择器 > 元素选择器
+
+
+> 参考资料\
+- [2022最新教程 | windows系统中vscode配置R语言](https://blog.csdn.net/yijiaobani/article/details/124009210)\
+- [VScode官网说明：VScode配置R环境](https://code.visualstudio.com/docs/languages/r)\
