@@ -35,7 +35,7 @@ image: ''
 | [DT]()                                                    |                          |
 | [bookdown]()                                                    |                          |
 | [坚果云Markdown高阶语法](https://markdown.jianguoyun.com/skill) | Markdown高阶语法，包含进阶、流程图、时序图、状态图、背景色、字体、字号等内容 |
-| [Advanced R Markdown Workshop](https://arm.rbind.io/)                                |  为期2天的高级Markdown工作坊，第一天介绍flexdashboard/xaringan/bookdown/blogdown，第二天介绍knitr和pandoc/rticles/及其跨语言性能                        |
+| [Advanced R Markdown Workshop](https://arm.rbind.io/)                                |  为期2天的高级Markdown工作坊，第一天介绍flexdashboard/xaringan/bookdown/blogdown，第二天介绍knitr和pandoc/rticles/及其跨语言性能  |
 | -----------------------------                                |  ------------------------------------                        |
 | **Shiny专题**                                                |                                                              |
 | [shinydashboard](http://rstudio.github.io/shinydashboard/structure.html) | ------------------------------------                         |
@@ -108,7 +108,8 @@ image: ''
 | [regexplain](https://www.zhihu.com/question/398418315/answer/1256685676)      |  ------------------------------------                        |
 | [taskscheduleR](https://cran.r-project.org/web/packages/taskscheduleR/readme/README.html) |  让计算机自动定时运行脚本，例如基于所有网站的数据库每个月都要更新       |
 | [`Discover and install useful RStudio addins`](https://github.com/daattali/addinslist)                                |  Github中总结的RStudio好用的插件               |
-| []()                                |  ------------------------------------                        |
+| [个人收集的免费R学习资源](https://jingtailiu.shinyapps.io/learnr-resource/)                                |  ------------------------------------                        |
+| [`TidyTuesday`](https://github.com/rfordatascience/tidytuesday)                                |  `TidyTuesday`      |
 | []()                                |  ------------------------------------                        |
 
 
