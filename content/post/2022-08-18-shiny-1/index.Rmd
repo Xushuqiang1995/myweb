@@ -31,10 +31,8 @@ opts_chunk$set(eval = FALSE)
 ```{r }
 # 常用控件展示
 shinysky::run.shinysky.example()
-shinyWidgets::
+shinyWidgets::shinyWidgetsGallery()
   
-library(shinysky)
-shinysky::run.shinysky.example()
 
 ```
 

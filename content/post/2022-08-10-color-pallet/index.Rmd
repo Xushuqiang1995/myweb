@@ -38,11 +38,17 @@ scale_fill_npg
 
 ```{r eval=FALSE}
 RColorBrewer::display.brewer.all()
+display.brewer.all(type = "all")
 display.brewer.all(type= "seq")
 display.brewer.all(type= "qual")
 display.brewer.all(type= "div")
 
 scale_fill_manual(values=rev(brewer.pal(11, "Spectral")))
+
+# remotes::install_github("mtennekes/cols4all")
+# 查看颜色
+library(cols4all)
+c4a_gui()
 
 ```
 
@@ -63,5 +69,5 @@ colourpicker::runExample()
 > 参考资料
 - [R语言调色板汇总](https://www.jianshu.com/p/14b47f89b67e)  
 - [R语言调色板集合 - 黄天元](https://zhuanlan.zhihu.com/p/445317403)  
-- []()  
-- []()  
+- [r语言中的ggplot2画出多种渐变色的好看的图](https://www.zhihu.com/question/305623922/answer/2625333042?utm_medium=social&utm_oi=908071370678730752&utm_psn=1545851253912973312&utm_source=ZHShareTargetIDMore)  
+- [选择主色，自动配出色阶的冷暖色调](https://mycolor.space/)  

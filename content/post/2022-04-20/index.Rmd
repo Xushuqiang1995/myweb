@@ -132,3 +132,12 @@ a <- 1
 checkmate::assert_number(x = a)
 ```
 
+
+### 查看已安装包及包信息
+
+```{r}
+available.packages() %>% 
+  as_tibble() %>% 
+  filter(str_detect(Package, 'tidyfst'))
+```
+
