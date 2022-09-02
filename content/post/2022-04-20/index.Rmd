@@ -141,3 +141,26 @@ available.packages() %>%
   filter(str_detect(Package, 'tidyfst'))
 ```
 
+
+```{r}
+###  查看包函数结构
+library(rvest)
+lsf.str("package:rvest")
+
+# 当package的函数不满足我们的要求时，通过下列操作修改函数；但暂时无法修改internal functions
+# Ref:https://mengranli.netlify.app/posts/2021-05-10-how-to-modify-a-function-in-a-r-package/
+
+# why the raw code differs when press F2 with the content blow(trace....)
+trace("sd",edit=TRUE)
+
+# 查看环境，也可在RStudio > Environment > Global Environment > package:stats
+# 查看不同的包环境已有的对象信息
+search()
+
+# ggupset绘制upset图
+# Ref:https://github.com/const-ae/ggupset
+theme_set(theme_classic())
+geom_point(fill = ..., show.legend = FALSE)
+
+```
+

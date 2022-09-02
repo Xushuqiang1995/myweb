@@ -70,6 +70,8 @@ image: ''
   - [符号计算与 R 语言](https://xiangyun.rbind.io/2016/07/r-symbol-calculate/)  
   - [开发企业级 Shiny 应用的技术栈](https://xiangyun.rbind.io/2021/08/shiny-in-production/)  
 - [王诗翔](https://www.jianshu.com/u/b6608e27dc74)  
+- [Yu Guangchuang 南方医科大，ggtree开发者](https://guangchuangyu.github.io/cn/2017/09/ggplot2-set-font/)
+
 
 ### 数据科学拓展
 
