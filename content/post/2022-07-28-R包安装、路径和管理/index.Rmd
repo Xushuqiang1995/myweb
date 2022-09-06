@@ -21,12 +21,12 @@ knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
 ```
 
 
-### R包安装
+### R包安装/卸载
 
 ```{r}
 library(tidyverse)
 
-
+# 各种安装方法
 # 经常遇见R包安装的问题，这里推荐使用pacman/devtools/install.packages进行安装
 pacman::p_load()           # 加载包，如果包未下载则自动安装
 pacman::p_unload()         # 将已加载的包从环境中去除
@@ -37,6 +37,22 @@ devtools::install_gitlab() # Gitlab安装
 devtools::install_github() # Github安装
 devtools::install_local()  # 本地安装
 devtools::install_bioc()   # 安装生物信息相关包
+devtools::install_version(package = '...', version = ..., force = TRUE)   # 安装适配R版本的包
+
+# 通过压缩包解压安装
+# 以tidyfst为例，在249/250平台上无法安装该包
+# 大致结果：
+# trying URL 'https://mirrors.sustech.edu.cn/CRAN/src/contrib/tidyfst_1.7.3.tar.gz'
+# Warning in install.packages :
+#   installation of package ‘tidyfst’ had non-zero exit status
+# 进入cran-r > 找到相应的R包 > 下载tidyfst_1.7.3.zip > 然后进入RStudio > File > home/R/X86../3.6/ > 上传压缩文件(会自动解压)
+# Done
+
+# 生物信息package瞎猜
+BiocManager::install()
+
+# 卸载
+remove.packages('...')
 
 ```
 

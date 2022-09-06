@@ -21,11 +21,11 @@ image: ''
 # 管理全局code chunk运行方式：是否输出？是否显示代码？是否运行代码？
 knitr::opts_chunk$set(echo = TRUE, eval = FALSE)</code></pre>
 </div>
-<div id="r包安装" class="section level3">
-<h3>R包安装</h3>
+<div id="r包安装卸载" class="section level3">
+<h3>R包安装/卸载</h3>
 <pre class="r"><code>library(tidyverse)
 
-
+# 各种安装方法
 # 经常遇见R包安装的问题，这里推荐使用pacman/devtools/install.packages进行安装
 pacman::p_load()           # 加载包，如果包未下载则自动安装
 pacman::p_unload()         # 将已加载的包从环境中去除
@@ -35,7 +35,23 @@ pacman::p_unload(pacman::p_loaded(), character.only = TRUE) # 出去环境中所
 devtools::install_gitlab() # Gitlab安装
 devtools::install_github() # Github安装
 devtools::install_local()  # 本地安装
-devtools::install_bioc()   # 安装生物信息相关包</code></pre>
+devtools::install_bioc()   # 安装生物信息相关包
+devtools::install_version(package = &#39;...&#39;, version = ..., force = TRUE)   # 安装适配R版本的包
+
+# 通过压缩包解压安装
+# 以tidyfst为例，在249/250平台上无法安装该包
+# 大致结果：
+# trying URL &#39;https://mirrors.sustech.edu.cn/CRAN/src/contrib/tidyfst_1.7.3.tar.gz&#39;
+# Warning in install.packages :
+#   installation of package ‘tidyfst’ had non-zero exit status
+# 进入cran-r &gt; 找到相应的R包 &gt; 下载tidyfst_1.7.3.zip &gt; 然后进入RStudio &gt; File &gt; home/R/X86../3.6/ &gt; 上传压缩文件(会自动解压)
+# Done
+
+# 生物信息package瞎猜
+BiocManager::install()
+
+# 卸载
+remove.packages(&#39;...&#39;)</code></pre>
 </div>
 <div id="查看已安装包路径和版本信息" class="section level3">
 <h3>查看已安装包、路径和版本信息</h3>

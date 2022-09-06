@@ -25,7 +25,7 @@ image: ''
 
 ### R资料Gallary
 
-| 流行的R资源汇总网址    | 用途介绍 |
+| **流行的R资源汇总网址**    | 用途介绍 |
 | ---------------------- | -------- |
 | [awesome-R](https://github.com/qinwf/awesome-R) | 它统计了CRAN上前50且git上被赞500以上的包。其一，R包系列，涵盖数据处理,绘图,ML,NLP,贝叶斯,高性能R,最优化,金融,空间,生信等领域；其二，资料，涵盖网址,书,慕课,podcast,Reference Card；其中的[r-blogger](https://www.r-bloggers.com/)[R-weekly](https://rweekly.org/)[R-users](https://www.r-users.com/)|
 | [Awesome Awesomeness](https://github.com/bayandin/awesome-awesomeness) | Awesome系列，对每种编程语言都进行了汇总，并总结成awesome-R相似的界面  |
@@ -35,7 +35,22 @@ image: ''
 | [Python Data Science Tutorials](https://github.com/ujjwalkarn/DataSciencePython)  |  Python数据科学指南专题 |
 | [Machine Learning & Deep Learning Tutorials](https://github.com/ujjwalkarn/Machine-Learning-Tutorials/blob/master/README.md)  | Awesome系列，python数据科学指南  |
 | [R package list(中文)](http://www.idata8.com/index2.html)                                |  (偶尔)R包中文介绍目录      |
+| [计算机电子书 2021 Git 仓库备份](https://github.com/apachecn/it-ebooks-archive/blob/66a1d479215c0e325d5b86175996a7677d4ff19c/docs/it-ebooks-2021.md) |  视觉AI应用/NLP基本概念和基于Transformer的NLP入门  |
+| [Awesome lists about all kinds of interesting topics](https://github.com/sindresorhus/awesome) |  Awesome系列(对Big Data专题感兴趣) |
+| [awesome-python](https://github.com/vinta/awesome-python) |  ------------------------------------                        |
+| [学习笔记——机器学习与经济学](https://github.com/jmxsy2016/Data-Science-and-Economics/blob/aeebd1f13c4881fdd1d30222f9d1848c0c684a93/README.md)                                |                      |
+| [BiocManager::install]()                                |  生信常用包安装方式                        |
+| [Big Cook of R(R百科全书，全面介绍了R语言在各领域的应用内容，并附上推荐书籍)](https://www.bigbookofr.com/big-data.html#using-spark-from-r-for-performance-with-arbitrary-code) | 超过300本免费书籍，在[R-blogger](https://www.r-bloggers.com/2022/07/part-1-of-3-300-milestone-for-big-book-of-r/)中有3篇单独文章介绍其内容和发展。其中涉及计量经济学、机器学习、贝叶斯、文本分析等领域的应用 |
+| [bigcook of R 新增23本书](https://www.r-bloggers.com/2022/09/23-new-books-added-to-big-book-of-r/) |  涉及生物/多元统计分析/brms包/中介、调节效应/网页抓取等内容 |
+| [bigcook of R](https://www.bigbookofr.com/index.html)                                |  ------------------------------------                        |
 | []()                                |  ------------------------------------                        |
+| []()                                |  ------------------------------------                        |
+| []()                                |  ------------------------------------                        |
+| **优质R-blogger记录**                   |  理由/读后感                        |
+| [预测模型的可解释性和可解释性](https://www.r-bloggers.com/2022/08/interpretability-and-explainability-of-predictive-models/) |  ------------------------------------                        |
+| [基于R的贝叶斯回归](https://www.r-bloggers.com/2022/08/interpretability-and-explainability-of-predictive-models/)                                |  ------------------------------------                        |
+| [Guy开发维特根斯坦shiny(wecd in git)界面总结](https://gjabel.wordpress.com/2015/06/15/shiny-app-for-the-wittgenstein-centre-population-projections/) | Guy遇到的问题，数据量过大/复杂图导出PDF/ggvis渲染图形及交互/[前端设计自动生成脚本](https://www.cssmatic.com/gradient-generator#%27\-moz\-linear\-gradient\%28left\%2C\%20rgba\%28248\%2C80\%2C50\%2C1\%29\%200\%25\%2C\%20rgba\%28241\%2C111\%2C92\%2C1\%29\%2050\%25\%2C\%20rgba\%28246\%2C41\%2C12\%2C1\%29\%2051\%25\%2C\%20rgba\%28240\%2C47\%2C23\%2C1\%29\%2071\%25\%2C\%20rgba\%28231\%2C56\%2C39\%2C1\%29\%20100\%25\%29\%3B%27)/以及对大型shiny讨论理解|
+| [R:使用Arrow包对10亿行出租车数据可视化](https://blog.djnavarro.net/posts/2022-08-23_visualising-a-billion-rows/)                                |  ------------------------------------                        |
 | []()                                |  ------------------------------------                        |
 | []()                                |  ------------------------------------                        |
 
@@ -50,6 +65,21 @@ image: ''
 | [rlang](https://www.rdocumentation.org/packages/rlang/versions/1.0.4) | rlang 是用于使用 R 编程的框架和 API 的集合  |
 | [base]() | **base**是R包基础核心内容，囊括了数据转换、处理、文本匹配等内容，help(package = 'base')命令查看函数，其中有不少好用的函数 |
 | [stats]() | **stats**是R包基础核心内容，囊括了数据转换、处理、文本匹配等内容，help(package = 'base')命令查看函数，其中有不少好用的函数 |
+
+### 机器学习专题
+
+| 机器学习内容                                                       | 用途介绍                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [LDAbiplots](https://www.r-bloggers.com/2022/08/july-2022-top-40-new-cran-packages/) | 提供工具来提取、探索、分析和可视化数字报纸使用潜在 Dirichlet 和机器学习算法在网络上发布的新闻 |
+| [sentiment.ai](https://www.r-bloggers.com/2022/03/better-sentiment-analysis-with-sentiment-ai/) | sentiment.ai助力更优质的情感分析 |
+| [Tensorflow数据科学教程](https://datasciencetut.com/best-books-to-learn-tensorflow/) | 学习Python/Tensorflow的最佳书籍推荐 |
+| [Yolo算法介绍及物体检测](https://appsilon.com/object-detection-yolo-algorithm/) |                          |
+| [Python与数据科学 推荐书籍](https://datasciencetut.com/best-books-on-data-science-with-python/)                                |                          |
+| [R 编程语言中的数据科学挑战](https://www.r-bloggers.com/2022/09/data-science-challenges-in-r-programming-language/) | 今天，我们为您提供了五个 R 编程语言的数据科学家庭作业问题，适合那些没有多少先验知识和有几年知识的人。|
+| [用加密新闻调查主题模型](https://www.r-bloggers.com/2017/03/investigating-topic-models-with-crypto-news/) | 将Julia的tidytext包通过主图模型实现新闻调查 |
+| []()                                |                          |
+| []()                                |                          |
+
 
 
 ### Markdown/Report专题
@@ -72,6 +102,8 @@ image: ''
 | [imageclipr](https://www.zhihu.com/question/398418315/answer/1467917011)      |  复制图片至rmarkdown文档中                        |
 | [regexplain](https://www.zhihu.com/question/398418315/answer/1467917011)      |  调试正则表达式，谁用谁知道                        |
 | [regexplain](https://www.zhihu.com/question/398418315/answer/1256685676)      |  ------------------------------------             |
+| [mermaid 语法绘制UML/甘特图/流程图等](https://zhuanlan.zhihu.com/p/172635547)                                |  ------------------------------------                        |
+| []()                                |  ------------------------------------                        |
 | []()                                |  ------------------------------------                        |
 | -----------------------------                                |  ------------------------------------                        |
 
@@ -119,7 +151,7 @@ image: ''
 | [tidyselect]()                       |                  |
 | [arrow](https://cran.r-project.org/web/packages/arrow/index.html)|  基于C++ Arrow库接口的数据读写功能，但速度低于fread|
 | [arrow::read_feather()/write_feather()]()                    | 高性能读取                                                   |
-| [feather]()                                                    |                                                              |
+| [feather]()                                                  |                                                              |
 | [vtoom::vroom()]()                                           | 高性能读取，相比fread()慢一点，但也被用于读取GB级数据  |
 | [collapse](https://sebkrantz.github.io/collapse/)            | 基于C/C++的包，用于R中的数据转换和统计计算；超链接中含有其介绍，以及它与data.table等其他类似包的比较                                                   |
 | [dtplyr](https://zhuanlan.zhihu.com/p/543252519)             |  只有dtplyr::lazy_dt()这个函数，用于将dplyr语句翻译为data.table语法，提高处理速度|
@@ -130,6 +162,8 @@ image: ''
 | [janitor-Rblogger介绍](https://www.r-bloggers.com/2020/08/r-packages-janitor-for-data-cleaning/)  <br> [janitor-示例](https://nexacu.com/insights-blog/the-r-janitor-package/)                               |  对数据进行初步清理，比如整理杂乱的变量名clean_names()，发现数据中的重复值,get_dupes()查找某列的重复值  |
 | [effectsize ]()                                |  ------------------------------------                        |
 | [slider]()                                |  (推荐)求滑动平均值(油管上Julia slide window)                        |
+| [tidylog]()                                |  记录tidyverse处理流，通过warning提示数据处理过程中去除的数据 |
+| [lubridate]()                                |  (推荐)专门用于处理日期数据                        |
 | []()                                |  ------------------------------------                        |
 | []()                                |  ------------------------------------                        |
 
@@ -177,8 +211,12 @@ image: ''
 | [gganimate]() | 将ggplot2包的可视化图像转化成动画的包 |
 | [ggfortify]() | (推荐)包含autoplot()函数，可以只用一行代码就可对主成分分析、聚类分析、回归分析、时间序列分析等方法的统计结果，以ggplot2的风格进行可视化，大大提高了数据分析的效率    |
 | [缺失值可视化包VIM和naniar]() | 其中naniar包的缺失值可视化图像是基于ggplot2包的，所以可以将图像更好的和ggplot2包结合，对图像进行调整。    |
+| [处理缺失数据的高级方法](https://jmxsy2016.github.io/Data-Science-and-Economics/Statistics/%E5%A4%84%E7%90%86%E7%BC%BA%E5%A4%B1%E6%95%B0%E6%8D%AE%E7%9A%84%E9%AB%98%E7%BA%A7%E6%96%B9%E6%B3%95.html) | (推荐)通过示例介绍缺失值的类型、识别缺失值、探索缺失值 |
+| [mice]()                                |  (推荐)填补缺失值常用包 |
 | [cowplot](https://mp.weixin.qq.com/s?__biz=MzI1NjUwMjQxMQ==&mid=2247486838&idx=2&sn=21ee1c8b683e7d27373f3e1f40901428&chksm=ea24f292dd537b843db330a88161ce6f89227418f64515164615c3f63721df6464b6d91a2b1a&scene=21#wechat_redirect) |  用R添加水印               |
-| []()                                |  ------------------------------------                        |
+| [tidyHeatmap](https://github.com/stemangiola/tidyHeatmap) | (推荐)该包继承tidyverse简洁的语法格式，用于绘制热图  |
+| [ComplexHeatmap]()                                | 在生信领域常被用于绘制热图，通过BiocManager::install()方式安装生信关联包  |
+| []()                                |   |
 | -----------------------------                                |  ------------------------------------                        |
 
 
@@ -253,11 +291,11 @@ image: ''
 | [reprex](https://www.tidyverse.org/blog/2021/04/reprex-2-0-0/) <br> [reprex](https://www.zhihu.com/question/398418315/answer/1256685676)| 把代码块变成一个可‘reproducible example’，常用语提问，可以让别人复现你的代码(错误)；用于github/stackoverflow提问环节 |
 | [datapasta](https://milesmcbain.github.io/datapasta/)|  (好用,推荐使用)加载包后，可直接从csv/excel/html文档中直接拷贝数据，RStudio > Addins > 'paste as tribble';可自定义快捷键;dt_paste()比较实用 |
 | [clipr::write_clip(data)](https://statisticsglobe.com/copy-data-frame-clipboard-r#:~:text=This%20example%20illustrates%20how%20to%20copy%20a%20data,as%20shown%20below%3A%20clipr%20%3A%3Awrite_clip%28data%29%20%23%20Apply%20write_clip)| 复制代码输出结果，方便用于提问，让读者看到清楚地数据结构等信息|
-| [showtext](https://cran.r-project.org/web/packages/showtext/vignettes/introduction.html)  |  在图例中添加不同的字体font_family，可(解决中文乱码问题)[https://www.jianshu.com/p/cfe2ed736c6d] |
+| [showtext](https://cran.r-project.org/web/packages/showtext/vignettes/introduction.html)  |  在图例中添加不同的字体font_family，可[解决中文乱码问题](https://www.jianshu.com/p/cfe2ed736c6d),参考[ggplot2 Gallary](https://r-graph-gallery.com/custom-fonts-in-R-and-ggplot2);[参考思路，了解showtext和其他Graphic Device](https://r-coder.com/custom-fonts-r/) |
 | [`Discover and install useful RStudio addins`](https://github.com/daattali/addinslist)                                |  Github中总结的RStudio好用的插件               |
 | [here/rstudioapi](https://zhuanlan.zhihu.com/p/268306337)  |  通过vignette('here')查看更多信息，方便快捷的获取目标文件路径;rstudioapi::getActiveDocumentContext()$path获取当前脚本完整路径信息 |
 | [ProjectTemplate](http://projecttemplate.net/index.html) |  (没用过)建立结构化的数据分析项目，给每个数据分析单独建一个项目，促进数据分析的可再生性                        |
-| [todor]()                                |  这个包特别在专门针对你代码中的comment 进行归类，使你的代码更加结构化。可以通过R-studio的插件来使用这个包  |
+| [todor]()                                |  (暂未使用过)这个包特别在专门针对你代码中的comment 进行归类，使你的代码更加结构化。可以通过R-studio的插件来使用这个包  |
 | [SRAdb]()                                |  下载原始测序数据  |
 | [TCGA工具](https://www.jianshu.com/p/023a26e94282) |  GDCRNATools是一个R包，提供标准的，易于使用和全面的管道，用于下载，组织和综合分析GDC门户中的RNA表达数据，重点是解读癌症中lncRNA-mRNA相关的ceRNA调控网络 |
 | []()                                |  ------------------------------------                        |
@@ -287,8 +325,12 @@ image: ''
 - [& #10004][tidyverse](https://www.tidyverse.org/blog/)
 - [& #10004][jumpingrivers,R/Python最新信息](https://www.jumpingrivers.com/blog/)
 - [x][JLaw's R Blog 每周一篇R应用文章](https://jlaw.netlify.app/)
-
-
+- [于淼 《现代科研指北》](https://yufree.cn/cn/2022/08/29/sciguide-on-market/)
+- [科研工具及技能表推荐](https://github.com/MLNBA-Lab/DataCollection2Public/blob/1ece83ca3d1e2009cc5c8c25b7cdf8100fae47bf/%E7%A7%91%E7%A0%94%E6%96%B9%E6%B3%95%E5%8F%8A%E5%B7%A5%E5%85%B7/%E7%A7%91%E7%A0%94%E5%B7%A5%E5%85%B7%E5%8F%8A%E6%8A%80%E8%83%BD%E8%A1%A8%E6%8E%A8%E8%8D%90.md)
+- [Awosome Network Analysis- Github Awosome系列](https://github.com/briatte/awesome-network-analysis)
+- [(R按行处理)Row-oriented workflows in R with the tidyverse](https://github.com/jennybc/row-oriented-workflows#readme)
+- [旋涡周报(专注自动化、分布式系统和存储)](https://xuanwo.io/reports/)
+- [高策周报-主要关注在云原生和 AI infra 领域。云原生机器学习基础设施开源项目 Kubeflow 社区 Co‑chair & Tech Lead，曾经全球贡献第二的贡献者。](https://gaocegege.com/Blog/featured/)
 
 # 书籍推荐、理由及完成进度
 * **绘图**
@@ -316,14 +358,21 @@ image: ''
 * **机器学习**
   1. [Tidy Modeling with R](https://www.tmwr.org/)：tidymodels框架
   2. [精通特征工程(Python)]()
+  3. [A Bayesian Course with Examples in R and Stan](https://xcelab.net/rm/statistical-rethinking/)：使用R/Stan教授完整Bayesian课程,并附有R/Stan/Julia示例[Youtube视频课程](https://www.youtube.com/playlist?list=PLDcUM9US4XdMROZ57-OIRtIK0aOynbgZN)
   3. []()
+  3. []()
+
+| 阅读书籍                          | 进度                             |
+|-----------------------------------|-------------------------------------|
+|                           |                              |
+
 ------------------------------------------------------------------------
 
 # Python
 
 ### 常用package及其介绍
 
-| 常用包                                                                    | 用途介绍                             |
+| 常用包                            | 用途介绍                             |
 |-----------------------------------|-------------------------------------|
 | [data.table](https://atrebas.github.io/post/2020-06-14-datatable-pandas/) | ------------------------------------ |
 | [Pyjanitor](https://blog.csdn.net/bf02jgtrs00xktcx/article/details/108067390) | 同R中janitor一样，用来更好地数据清理 |
