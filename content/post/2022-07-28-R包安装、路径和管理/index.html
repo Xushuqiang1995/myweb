@@ -91,6 +91,20 @@ help(&quot;dplyr&quot;)
 ??dplyr
 ?filter</code></pre>
 </div>
+<div id="查看源码" class="section level3">
+<h3>查看源码</h3>
+<blockquote>
+<p>当包中的函数不满足需求，需要丰富其功能，或者想查看其原理时；可通过查看/修改源码的方式满足需求</p>
+</blockquote>
+<pre class="r"><code># 六种查看源码的方式
+lm                   # 快捷键F2查看
+lm                   # 直接在命令行中输入lm可查看源码
+page(lm)             # 在另一个界面中打开查看源码
+edit(lm)             # 可直接修改包中的函数，但是不建议这么做
+getAnywhere(lm)      # 查看源码及所属环境
+                     # 在http://www.r-project.org/ 中找到package的 tar.gz 文件，为源码内容
+                     # 可在RStudio &gt; Environment &gt; 切换Global Environment环境为某个包环境 &gt; 可了解包函数及其环境信息</code></pre>
+</div>
 <div id="查看系统信息和内存管理" class="section level3">
 <h3>查看系统信息和内存管理</h3>
 <pre class="r"><code>utils::sessionInfo()
@@ -118,7 +132,7 @@ gc()</code></pre>
 - <a href="http://rmarkdown.rstudio.com/index.html"><code>Rmarkdown</code></a><br />
 - <a href="https://r-lib.github.io/sessioninfo/index.html"><code>sessioninfo</code></a><br />
 - <a href="https://www.cnblogs.com/xuancaoyy/p/5449172.html">R内存管理和垃圾清理</a><br />
-- <a href=""></a><br />
+- <a href="https://zhuanlan.zhihu.com/p/216217782">R语言查看 function 的源代码的六种场合与方法</a><br />
 - <a href=""></a></p>
 </blockquote>
 </div>

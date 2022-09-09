@@ -27,7 +27,7 @@ image: ''
 
 | **流行的R资源汇总网址**    | 用途介绍 |
 | ---------------------- | -------- |
-| [awesome-R](https://github.com/qinwf/awesome-R) | 它统计了CRAN上前50且git上被赞500以上的包。其一，R包系列，涵盖数据处理,绘图,ML,NLP,贝叶斯,高性能R,最优化,金融,空间,生信等领域；其二，资料，涵盖网址,书,慕课,podcast,Reference Card；其中的[r-blogger](https://www.r-bloggers.com/)[R-weekly](https://rweekly.org/)[R-users](https://www.r-users.com/)|
+| [awesome-R](https://github.com/qinwf/awesome-R) | 它统计了CRAN上前50且git上被赞500以上的包。其一，R包系列，涵盖数据处理,绘图,ML,NLP,贝叶斯,高性能R,最优化,金融,空间,生信等领域；其二，资料，涵盖网址,书,慕课,podcast,Reference Card；其中的[R-blogger](https://www.r-bloggers.com/)/[R-weekly](https://rweekly.org/)/[R-users](https://www.r-users.com/)/[R AI blog](https://blogs.rstudio.com/ai/)|
 | [Awesome Awesomeness](https://github.com/bayandin/awesome-awesomeness) | Awesome系列，对每种编程语言都进行了汇总，并总结成awesome-R相似的界面  |
 | [Awesome-rshiny](https://github.com/grabear/awesome-rshiny) | 根据shiny开发不同需求汇总shiny包内容   |
 | [Awesome NLP in R](https://github.com/BZRLC/R-notes/blob/master/NLP/readme.md) | `NLP`在R应用中的细分领域，有中文，包含分词、向量化、文本回归与去重、文本定量分析与主题模型等内容  |
@@ -43,14 +43,19 @@ image: ''
 | [Big Cook of R(R百科全书，全面介绍了R语言在各领域的应用内容，并附上推荐书籍)](https://www.bigbookofr.com/big-data.html#using-spark-from-r-for-performance-with-arbitrary-code) | 超过300本免费书籍，在[R-blogger](https://www.r-bloggers.com/2022/07/part-1-of-3-300-milestone-for-big-book-of-r/)中有3篇单独文章介绍其内容和发展。其中涉及计量经济学、机器学习、贝叶斯、文本分析等领域的应用 |
 | [bigcook of R 新增23本书](https://www.r-bloggers.com/2022/09/23-new-books-added-to-big-book-of-r/) |  涉及生物/多元统计分析/brms包/中介、调节效应/网页抓取等内容 |
 | [bigcook of R](https://www.bigbookofr.com/index.html)                                |  ------------------------------------                        |
-| []()                                |  ------------------------------------                        |
-| []()                                |  ------------------------------------                        |
+| [RStudio Cheatsheet](https://github.com/rstudio/cheatsheets)                                |  在github中找到最新的cheatsheet内容信息                        |
+| [神经网络计算图解小工具](https://aegeorge42.github.io/)                                |  通过图形的方式，介绍了神经网络的计算/迭代过程                        |
 | []()                                |  ------------------------------------                        |
 | **优质R-blogger记录**                   |  理由/读后感                        |
 | [预测模型的可解释性和可解释性](https://www.r-bloggers.com/2022/08/interpretability-and-explainability-of-predictive-models/) |  ------------------------------------                        |
 | [基于R的贝叶斯回归](https://www.r-bloggers.com/2022/08/interpretability-and-explainability-of-predictive-models/)                                |  ------------------------------------                        |
 | [Guy开发维特根斯坦shiny(wecd in git)界面总结](https://gjabel.wordpress.com/2015/06/15/shiny-app-for-the-wittgenstein-centre-population-projections/) | Guy遇到的问题，数据量过大/复杂图导出PDF/ggvis渲染图形及交互/[前端设计自动生成脚本](https://www.cssmatic.com/gradient-generator#%27\-moz\-linear\-gradient\%28left\%2C\%20rgba\%28248\%2C80\%2C50\%2C1\%29\%200\%25\%2C\%20rgba\%28241\%2C111\%2C92\%2C1\%29\%2050\%25\%2C\%20rgba\%28246\%2C41\%2C12\%2C1\%29\%2051\%25\%2C\%20rgba\%28240\%2C47\%2C23\%2C1\%29\%2071\%25\%2C\%20rgba\%28231\%2C56\%2C39\%2C1\%29\%20100\%25\%29\%3B%27)/以及对大型shiny讨论理解|
 | [R:使用Arrow包对10亿行出租车数据可视化](https://blog.djnavarro.net/posts/2022-08-23_visualising-a-billion-rows/)                                |  ------------------------------------                        |
+| []()                                |  ------------------------------------                        |
+| []()                                |  ------------------------------------                        |
+| **深度学习方向**                    |                          |
+| [百度的Paddelpaddle框架](https://aistudio.baidu.com/aistudio/course/list/1/4) |  Paddlepaddle机器学习/深度学习进阶学习                        |
+| []()                                |  ------------------------------------                        |
 | []()                                |  ------------------------------------                        |
 | []()                                |  ------------------------------------                        |
 
@@ -101,6 +106,7 @@ image: ''
 | [WrapRmd](https://github.com/tjmahr/WrapRmd)  |  整理markdown文件段落                        |
 | [imageclipr](https://www.zhihu.com/question/398418315/answer/1467917011)      |  复制图片至rmarkdown文档中                        |
 | [regexplain](https://www.zhihu.com/question/398418315/answer/1467917011)      |  调试正则表达式，谁用谁知道                        |
+| [regex101.com](https://regex101.com/)      |  stackoverflow推荐正则表达                        |
 | [regexplain](https://www.zhihu.com/question/398418315/answer/1256685676)      |  ------------------------------------             |
 | [mermaid 语法绘制UML/甘特图/流程图等](https://zhuanlan.zhihu.com/p/172635547)                                |  ------------------------------------                        |
 | []()                                |  ------------------------------------                        |
@@ -114,7 +120,6 @@ image: ''
 | [shinydashboard](http://rstudio.github.io/shinydashboard/structure.html) | ------------------------------------                         |
 | [reactlog](https://mastering-shiny.org/reactive-graph.html)  | 画shiny app的响应图,reactlog::reactlog_enable() shiny::reactlogShow() |
 | [shinyloadtest](https://mastering-shiny.org/performance.html) | 模拟许多人同时使用您的应用程序                               |
-| [profvis](https://mastering-shiny.org/performance.html)      | 分析应用程序，识别R代码慢速部分                              |
 | [promises](https://rstudio.github.io/promises/)              | 异步编程是用来提高可伸缩性和响应能力的一种技术，仅适用于shiny这样的R Web应用程序 |
 | [shinyWidgets::shinyWidgetsGallery()]()                       | shiny控件集合，可以随时参考所需要的控件                         |
 | [Shiny 中的各种主题和 UI 插件](https://cloud.tencent.com/developer/article/1749336) | 该文章从shiny主题和UI组间角度总结了常用的内容，其中主题(通用主题,仪表盘主题,移动端主题,自定义主题)，UI组件(Bootstrap,文件输入,特殊输入,加载动画,反馈/警报/通知,创建新手指引/帮助文档,剪贴板,取色器,编辑器,表格展示,创建抽屉,实现拖拽操作,文本,图片/音频/视频,嵌入 PDF,Icon Font,图像比较,代码比较,日历) |
@@ -136,7 +141,7 @@ image: ''
 | [broom.mixed]()                                              |   ()主要用于线性混合模型提取参数估计值等统计量                       |
 | [effectsize](https://easystats.github.io/effectsize/reference/index.html) |  F/t等检验统计量的相互转换，大学生初次接触检验统计量时常会用到                        |
 | [dotwhisker::dwplot]()                                |  Julia用该函数绘制统计量的置信区间点图                        |
-| []()                                |  ------------------------------------                        |
+| [performance]()                                | 检测多重共线性                        |
 | -----------------------------                                |  ------------------------------------                        |
 
 
@@ -173,13 +178,14 @@ image: ''
 | **文本处理/挖掘/爬虫专题**                                             |                                                              |
 | -----------------------------                                |  ------------------------------------                        |
 | [tidytext](https://www.jumpingrivers.com/training/course/r-text-mining-tidyverse-stringr-tidytext/) | Julia开发专门来做文本挖掘的，提供tf-idf/主题模型/情感分析等内容  |
-| [stringr](https://stringr.tidyverse.org/)                    | 字符串/文本处理，(base中的文本处理函数)[https://www.jianshu.com/p/5bd0846b0d7d]  |
+| [stringr](https://stringr.tidyverse.org/)                    | 字符串/文本处理，(base中的文本处理函数)[https://www.jianshu.com/p/5bd0846b0d7d],其中文表达为[`[\\p{Han}]`](https://zhuanlan.zhihu.com/p/376151000)  |
 | [httr]()                                |  ------------------------------------                        |
 | [xml2]()                                |  ------------------------------------                        |
-| [rvest]()                                |  html表格抓取                        |
+| [rvest]()                                |  实现静态页面爬取功能；html表格抓取;html_encoding_guess()判断网页文本编码格式 |
 | [unpivotr](https://github.com/nacnudus/unpivotr) |  实现对多层次表头的xlsx表格进行正确读取（不丢失表头信息）                        |
 | [htmltab](https://github.com/crubba/htmltab) |  (年久失修，很久没维护了)允许对多层次表头的html表格的进行指定抓取（不丢失表头信息）                        |
 | [RSelenium]()                                |  爬取动态页面时常用,可结合(Docker部署爬虫系统)[https://www.jianshu.com/p/eeeace34d20c] |
+| [Rwebdriver]()                               |  支持动态页面爬取功能 |
 | [W3C正则表达式在线工具](https://www.w3cschool.cn/tools/index?name=reg)     |  w3cschool正则表达式，有少量常用字符匹配说明，[w3c正则介绍](https://www.w3cschool.cn/regexp/tfua1pq5.html)                        |
 | [runoob菜鸟教程在线工具](https://c.runoob.com/front-end/854/) |  界面更加简洁                        |
 | [MK正则表达式在线工具](https://www.mklab.cn/utils/regex) |  有html注释的正则表达式  |
@@ -202,22 +208,25 @@ image: ''
 | [gridExtra](https://www.jianshu.com/p/c154ca35530b) | 拼接多个ggplot图;因为R base中par()和layout()对多个ggplot对象排版无效                      |
 | [esquisse]()                        | (不使用，仅适用于初学者/只想画图的人)免代码ggplot生成器，鼠标点点点就能在R-studio里面画图                         |
 | [ggThemeAssist]()                   | (不使用，但是对于初学者而言，有助于了解了解ggplot画图有哪些内容)调节ggplot对象,免代码调节ggplot的细节参数,比如字体，背景颜色等等。选择绘图代码后，Addins > ggplot Theme Assistant |
-| [ggstatsplot]()                                |  绘制带有统计检验性的图表，可用于文章发表  |
-| [gtable]()                                | gtable包用于处理ggplot2图像,底层处理图像  |
+| [ggstatsplot]()                     |  绘制带有统计检验性的图表，可用于文章发表  |
+| [gtable]()                          | gtable包用于处理ggplot2图像,底层处理图像  |
 | [ggridges](https://cran.r-project.org/web/packages/ggridges/vignettes/introduction.html) | (用过)可视化脊线图的包，对可视化时间或空间分布的变化非常有效  |
 | [eulerr](https://www.jianshu.com/p/3013e7710f0a)  | (推荐尝试)有在线shiny绘图，画图比VennDiagram好看点                        |
 | [ggcor]()                                | 相关性可视化(下三角矩阵图) |
 | [treemapify和ggpol包]()                                | (没用过)矩形树图 |
 | [gganimate]() | 将ggplot2包的可视化图像转化成动画的包 |
 | [ggfortify]() | (推荐)包含autoplot()函数，可以只用一行代码就可对主成分分析、聚类分析、回归分析、时间序列分析等方法的统计结果，以ggplot2的风格进行可视化，大大提高了数据分析的效率    |
-| [缺失值可视化包VIM和naniar]() | 其中naniar包的缺失值可视化图像是基于ggplot2包的，所以可以将图像更好的和ggplot2包结合，对图像进行调整。    |
+| [缺失值可视化包VIM和naniar](http://naniar.njtierney.com/index.html) | 其中naniar包的缺失值可视化图像是基于ggplot2包的，所以可以将图像更好的和ggplot2包结合，对图像进行调整。在Julia的tidymodel视频课程中也使用naniar函数    |
 | [处理缺失数据的高级方法](https://jmxsy2016.github.io/Data-Science-and-Economics/Statistics/%E5%A4%84%E7%90%86%E7%BC%BA%E5%A4%B1%E6%95%B0%E6%8D%AE%E7%9A%84%E9%AB%98%E7%BA%A7%E6%96%B9%E6%B3%95.html) | (推荐)通过示例介绍缺失值的类型、识别缺失值、探索缺失值 |
 | [mice]()                                |  (推荐)填补缺失值常用包 |
 | [cowplot](https://mp.weixin.qq.com/s?__biz=MzI1NjUwMjQxMQ==&mid=2247486838&idx=2&sn=21ee1c8b683e7d27373f3e1f40901428&chksm=ea24f292dd537b843db330a88161ce6f89227418f64515164615c3f63721df6464b6d91a2b1a&scene=21#wechat_redirect) |  用R添加水印               |
 | [tidyHeatmap](https://github.com/stemangiola/tidyHeatmap) | (推荐)该包继承tidyverse简洁的语法格式，用于绘制热图  |
 | [ComplexHeatmap]()                                | 在生信领域常被用于绘制热图，通过BiocManager::install()方式安装生信关联包  |
+| []()                                | ggplot2::annotate()添加注释信息[ggplot2绘图细节调整视频教学](https://space.bilibili.com/594999645/video?tid=0&page=1&keyword=&order=pubdate)  |
+| [gganimate](https://zhuanlan.zhihu.com/p/110156607) | (推荐)支持生成动态图形，可用于报告中呈现动态结果   |
+| [echarts4r](https://zhuanlan.zhihu.com/p/111755894) | echarts4r包调用了百度的Echarts可视化工具的API,构建常规交互式绘图包  |
 | []()                                |   |
-| -----------------------------                                |  ------------------------------------                        |
+| []()                                |   |
 
 
 
@@ -234,6 +243,7 @@ image: ''
 
 | **性能与R包开发** | ---------------------- |
 | ----------------- |  --------------------- |
+| [profvis](https://mastering-shiny.org/performance.html)      | 分析应用程序，识别R代码慢速部分                              |
 | [profvis](https://rstudio.github.io/profvis/) | 在开发包/shiny过程中，交互式查看代码性能，帮助coder精准优化代码性能 |
 | [roxygen2](https://www.tidyverse.org/blog/2022/05/roxygen2-7-2-0/) | roxygen2 允许您编写特殊格式的 R 注释，生成 R 文档文件 ( man/*.Rd) 和NAMESPACE文件|
 | [pkgdown](https://www.tidyverse.org/blog/2021/12/pkgdown-2-0-0/)  | pkgdown 旨在使您可以快速轻松地为您的软件包构建网站 |
@@ -241,9 +251,11 @@ image: ''
 | [OOP in R(S3/S4/R6)](https://www.jumpingrivers.com/training/course/oop-s3-s4-r6-classes/)|                                                               |
 | [jsonlite](https://zhuanlan.zhihu.com/p/27662104) |  json是当下非常流行的数据交换格式，该包提供了json数据读取、导出及与R数据类型双向转换的功能 |
 | [testthat]()                                |  扩展包自动测试                        |
-| [pipeR]() |  自己写的高性能、低损耗、分工明确的管道操作（pipeline operator）扩展包，使得数据变换流程化 |
+| [pipeR]() |  (不使用)自己写的高性能、低损耗、分工明确的管道操作（pipeline operator）扩展包，使得数据变换流程化 |
 | [devtools](https://www.rdocumentation.org/packages/devtools/versions/2.4.4) | 扩展包开发必备，在线安装托管的扩展包，检查扩展包是否符合CRAN标准等等 |
 | [testthat]()                   |  (没用过)扩展包自动测试  |
+| [Deepdep](https://dominikrafacz.github.io/deepdep/index.html) | (作为R包开发者很有用)R包的依赖包可视化工具                        |
+| [gWidgets](https://zhuanlan.zhihu.com/p/115068286) | 交互式程序控制功能，在代码的重要节点，返回控件信息请求用户判断是否进行下一步；gWidgets包的ginput函数                          |
 | []()                   |  ------------------------------------                        |
 | []()                   |  ------------------------------------                        |
 
@@ -263,13 +275,15 @@ image: ''
 
 | **空间数据**                                                 |                          |
 | -----------------------------                                |  ------------------------------------                        |
-| [sf]()                                |  ------------------------------------                        |
+| [sf](https://r-spatial.github.io/sf/index.html)                                |  ------------------------------------                        |
 | [tmap]()                                |  ------------------------------------                        |
-| [leaflet]()                                |  leaflet是交互式地图中最受欢迎的JavaScript库之一，常用于shiny/markdown文档交互;可参考[Tom Jenkins的示例介绍](https://tomjenkins.netlify.app/tutorials/r-leaflet-introduction/)  |
+| [leaflet](http://rstudio.github.io/leaflet/) |  leaflet是交互式地图中最受欢迎的JavaScript库之一，常用于shiny/markdown文档交互;可参考[Tom Jenkins的示例介绍](https://tomjenkins.netlify.app/tutorials/r-leaflet-introduction/) |
 | [Geocomputation with R](https://geocompr.robinlovelace.net/index.html)   |  ------------------------------------        |
 | [Apllied Spatial Data Analysis with R]()    |  ------------------------------------                        |
 | [Spatial Mivrosimulation with R](https://spatial-microsim-book.robinlovelace.net/index.html)  |                          |
 | [baidumap]()                   |  (没用过)devtools::install_github('badbye/baidumap') library(baidumap) options(baidumap.key = '百度地图API') getCoordinate("江苏省南京市",formatted=T) longtitude   latitude 118.80242   32.06465 查询城市经纬度 |
+| [ggspatial](https://zhuanlan.zhihu.com/p/151400985)                   |  ggplot2空间绘图，layer_spatial()专门用于画栅格数据，[ggspatial官方介绍](https://paleolimbot.github.io/ggspatial/articles/ggspatial.html)                        |
+| [biscale](https://github.com/chris-prener/biscale)                   |  空间二元主题绘图(图形美观好看)                        |
 | []()                   |  ------------------------------------                        |
 | []()                   |  ------------------------------------                        |
 | -----------------------------                                |  ------------------------------------                        |
@@ -278,8 +292,8 @@ image: ''
 
 | **大数据处理**                                                 |                          |
 | -----------------------------                                |  ------------------------------------                        |
-| [sparklyr]()                                |  [分布式处理性能明显由于data.table](https://zhuanlan.zhihu.com/p/374434258)   |
-| []()                                        |  ------------------------------------                        |
+| [sparklyr]()                                |  [data.table和Sparklyr分布式运算比较](https://zhuanlan.zhihu.com/p/374434258)   |
+| [parallel](https://zhuanlan.zhihu.com/p/376151000) |  [foreach](https://zhuanlan.zhihu.com/p/110107815)等支持对大数据/多文件的并行运算函数                        |
 | -----------------------------                                |  ------------------------------------                        |
 
 
@@ -298,6 +312,7 @@ image: ''
 | [todor]()                                |  (暂未使用过)这个包特别在专门针对你代码中的comment 进行归类，使你的代码更加结构化。可以通过R-studio的插件来使用这个包  |
 | [SRAdb]()                                |  下载原始测序数据  |
 | [TCGA工具](https://www.jianshu.com/p/023a26e94282) |  GDCRNATools是一个R包，提供标准的，易于使用和全面的管道，用于下载，组织和综合分析GDC门户中的RNA表达数据，重点是解读癌症中lncRNA-mRNA相关的ceRNA调控网络 |
+| [qs](https://zhuanlan.zhihu.com/p/147643442) |  qs::qsavem()存储多个R对象(结构)，                        |
 | []()                                |  ------------------------------------                        |
 
 
@@ -366,14 +381,3 @@ image: ''
 |-----------------------------------|-------------------------------------|
 |                           |                              |
 
-------------------------------------------------------------------------
-
-# Python
-
-### 常用package及其介绍
-
-| 常用包                            | 用途介绍                             |
-|-----------------------------------|-------------------------------------|
-| [data.table](https://atrebas.github.io/post/2020-06-14-datatable-pandas/) | ------------------------------------ |
-| [Pyjanitor](https://blog.csdn.net/bf02jgtrs00xktcx/article/details/108067390) | 同R中janitor一样，用来更好地数据清理 |
-| -----------------------------                                             | ------------------------------------ |

@@ -26,6 +26,7 @@ library(silgelib)
 theme_set(theme_plex())
 ```
 
+> 使用(>)标记每个课程新颖点
 
 ## 1. PCA and UMAP with tidymodels and cocktail recipes
 
