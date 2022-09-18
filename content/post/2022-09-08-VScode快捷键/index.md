@@ -74,10 +74,13 @@ Ctrl + K & ...
 
 # VScode实用功能
 
+# [Jupyter Notebook快捷键介绍](https://zhuanlan.zhihu.com/p/341503927)
+
+
 > 支持脚本版本对比功能
 
 > 参考资料
-> - [学习网址1](https://www.bilibili.com/video/BV16a411U774?p=18&spm_id_from=pageDriver&vd_source=ded60bf71a923854104861c4f075796)
-> - [学习网址](https://www.bilibili.com/video/BV13b4y1p7KE?spm_id_from=333.337.search-card.all.click&vd_source=ded60bf71a923854104861c4f0757962)
-> - [学习资料链接(提取码：32f7 )](https://pan.baidu.com/s/1EUbg3zT7JsZuegCYgtMLUQ )
+> - [vscode快捷键视频教学1](https://www.bilibili.com/video/BV16a411U774?p=18&spm_id_from=pageDriver&vd_source=ded60bf71a923854104861c4f075796)
+> - [vscode快捷键视频教学2](https://www.bilibili.com/video/BV13b4y1p7KE?spm_id_from=333.337.search-card.all.click&vd_source=ded60bf71a923854104861c4f0757962)
+> - [vscode学习资料链接(提取码：32f7 )](https://pan.baidu.com/s/1EUbg3zT7JsZuegCYgtMLUQ )
 

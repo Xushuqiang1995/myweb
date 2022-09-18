@@ -51,11 +51,14 @@ image: ''
 | [基于R的贝叶斯回归](https://www.r-bloggers.com/2022/08/interpretability-and-explainability-of-predictive-models/)                                |  ------------------------------------                        |
 | [Guy开发维特根斯坦shiny(wecd in git)界面总结](https://gjabel.wordpress.com/2015/06/15/shiny-app-for-the-wittgenstein-centre-population-projections/) | Guy遇到的问题，数据量过大/复杂图导出PDF/ggvis渲染图形及交互/[前端设计自动生成脚本](https://www.cssmatic.com/gradient-generator#%27\-moz\-linear\-gradient\%28left\%2C\%20rgba\%28248\%2C80\%2C50\%2C1\%29\%200\%25\%2C\%20rgba\%28241\%2C111\%2C92\%2C1\%29\%2050\%25\%2C\%20rgba\%28246\%2C41\%2C12\%2C1\%29\%2051\%25\%2C\%20rgba\%28240\%2C47\%2C23\%2C1\%29\%2071\%25\%2C\%20rgba\%28231\%2C56\%2C39\%2C1\%29\%20100\%25\%29\%3B%27)/以及对大型shiny讨论理解|
 | [R:使用Arrow包对10亿行出租车数据可视化](https://blog.djnavarro.net/posts/2022-08-23_visualising-a-billion-rows/)                                |  ------------------------------------                        |
+| [张丹个人blog-算法]为王系列(http://blog.fens.me/series-algorithm/) |  张丹是以为擅长Java/R/Hadoop生态的数据科学家，现在金融科技领域从事开发、数据分析工作 |
+| [R 46种距离算法表示]()                                |  ------------------------------------                        |
+| []()                                |  ------------------------------------                        |
 | []()                                |  ------------------------------------                        |
 | []()                                |  ------------------------------------                        |
 | **深度学习方向**                    |                          |
 | [百度的Paddelpaddle框架](https://aistudio.baidu.com/aistudio/course/list/1/4) |  Paddlepaddle机器学习/深度学习进阶学习                        |
-| []()                                |  ------------------------------------                        |
+| [来自咖喱国的Marktechpost网站](https://www.marktechpost.com/) | 该科技网站将内容归纳为ML/DL/AI/NLP等内容，主要通过阅读文件后总结内容，对AI领域最新的研究进行简短介绍，并附有论文地址                        |
 | []()                                |  ------------------------------------                        |
 | []()                                |  ------------------------------------                        |
 
@@ -108,8 +111,9 @@ image: ''
 | [regexplain](https://www.zhihu.com/question/398418315/answer/1467917011)      |  调试正则表达式，谁用谁知道                        |
 | [regex101.com](https://regex101.com/)      |  stackoverflow推荐正则表达                        |
 | [regexplain](https://www.zhihu.com/question/398418315/answer/1256685676)      |  ------------------------------------             |
-| [mermaid 语法绘制UML/甘特图/流程图等](https://zhuanlan.zhihu.com/p/172635547)                                |  ------------------------------------                        |
-| []()                                |  ------------------------------------                        |
+| [mermaid 语法绘制UML/甘特图/流程图等](https://zhuanlan.zhihu.com/p/172635547) |  ------------------------------------                        |
+| [Markdown数学公式](http://onceoa.com/wiki/view/markdown/katex) | Markdown常用数学表达符号一览，行内公式用$math_expr$，另起一行公式用$$math_expre$$|
+| [Markdown数学公式(在线测试)](https://latex.codecogs.com/eqneditor/editor.php) |  ------------------------------------                        |
 | []()                                |  ------------------------------------                        |
 | -----------------------------                                |  ------------------------------------                        |
 
@@ -135,9 +139,9 @@ image: ''
 | **Statistical专题**                                          |                          |
 | -----------------------------                                |  ------------------------------------                        |
 | [flextable]()                                                |  模型系数输出为表格形式                        |
-| [sjPlot]()                                                   |  用于绘制模型系数图/参数估计值/生成统计系数表，常用plot_model/plot_scatter |
+| [sjPlot](https://strengejacke.github.io/sjPlot/articles/tab_mixed.html) |  用于绘制线性模型、边际效应、混合效应模型的参数估计图/统计系数表，常用plot_model/plot_scatter |
 | [gtsummary]()                                                | 将分析的结果整理成表格输出                         |
-| [broom]()                                                    |  (常用)通过tidy/augment获取模型参数估计值、误差项、P.value|
+| [broom]()                                                    |  (常用)通过tidy/augment/glance获取模型参数估计值、误差项、P.value|
 | [broom.mixed]()                                              |   ()主要用于线性混合模型提取参数估计值等统计量                       |
 | [effectsize](https://easystats.github.io/effectsize/reference/index.html) |  F/t等检验统计量的相互转换，大学生初次接触检验统计量时常会用到                        |
 | [dotwhisker::dwplot]()                                |  Julia用该函数绘制统计量的置信区间点图                        |
@@ -221,10 +225,12 @@ image: ''
 | [mice]()                                |  (推荐)填补缺失值常用包 |
 | [cowplot](https://mp.weixin.qq.com/s?__biz=MzI1NjUwMjQxMQ==&mid=2247486838&idx=2&sn=21ee1c8b683e7d27373f3e1f40901428&chksm=ea24f292dd537b843db330a88161ce6f89227418f64515164615c3f63721df6464b6d91a2b1a&scene=21#wechat_redirect) |  用R添加水印               |
 | [tidyHeatmap](https://github.com/stemangiola/tidyHeatmap) | (推荐)该包继承tidyverse简洁的语法格式，用于绘制热图  |
-| [ComplexHeatmap]()                                | 在生信领域常被用于绘制热图，通过BiocManager::install()方式安装生信关联包  |
+| [ComplexHeatmap]()                                | 在生信领域常被用于绘制热图，通过BiocManager::install()方式安装生信关联包; [complexHeatmap简介 - 百迈客生物科技](http://www.biomarker.com.cn/archives/16110)  |
 | []()                                | ggplot2::annotate()添加注释信息[ggplot2绘图细节调整视频教学](https://space.bilibili.com/594999645/video?tid=0&page=1&keyword=&order=pubdate)  |
 | [gganimate](https://zhuanlan.zhihu.com/p/110156607) | (推荐)支持生成动态图形，可用于报告中呈现动态结果   |
 | [echarts4r](https://zhuanlan.zhihu.com/p/111755894) | echarts4r包调用了百度的Echarts可视化工具的API,构建常规交互式绘图包  |
+| [ggbreak](https://cran.r-project.org/web/packages/ggbreak/vignettes/ggbreak.html#feature-11-compatible-with-dual-axis) | (基本不使用)其功能类似于坐标轴的数值转换(log/exp)等，当分组绘制柱状图时，柱子的垂直差距过大，但不想跟对坐标轴/y值数值转换，此时只去柱状图垂直两端的柱子和y轴信息，可更直观地比较   |
+| []()                                |   |
 | []()                                |   |
 | []()                                |   |
 
@@ -313,6 +319,7 @@ image: ''
 | [SRAdb]()                                |  下载原始测序数据  |
 | [TCGA工具](https://www.jianshu.com/p/023a26e94282) |  GDCRNATools是一个R包，提供标准的，易于使用和全面的管道，用于下载，组织和综合分析GDC门户中的RNA表达数据，重点是解读癌症中lncRNA-mRNA相关的ceRNA调控网络 |
 | [qs](https://zhuanlan.zhihu.com/p/147643442) |  qs::qsavem()存储多个R对象(结构)，                        |
+| [vitae]()                                |  (?)制作个人简历用途，可重复利用                        |
 | []()                                |  ------------------------------------                        |
 
 
