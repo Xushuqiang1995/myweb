@@ -37,7 +37,12 @@ image: ''
 | [scikit learn官网](https://scikit-learn.org/stable/index.html)    | 通过示例介绍Python的特征工程和建模领域的应用  |
 | [sklearn中文版](https://www.scikitlearn.com.cn/) | 其参考了scikit learn官网内容进行了整合   |
 | [pandas官方网址](https://pandas.pydata.org/pandas-docs/stable/getting_started/comparison/comparison_with_r.html#compare-with-r) | pandas官网，对于其他编程语言爱好者非常友好，将Python的脚本与R中数据处理脚本进行对比  |
+| [Python库检索](https://pypi.org/) | 用于python库的查询、下载和发布  |
+| [Python内置函数](https://docs.python.org/zh-cn/3/library/functions.html) |   |
 | []()                        |   |
+| []()                        |   |
+| []()                        |   |
+
 
 
 ### 常用package及其介绍
@@ -51,7 +56,7 @@ image: ''
 | [matploit]()                              | ------------------------------------ |
 | [os]()                              | ------------------------------------ |
 | [scikit learning]()                              | ------------------------------------ |
-| []()                              | ------------------------------------ |
+| [unittest]()                              | Python单元测试库，python自带，不需要额外安装 |
 | []()                              | ------------------------------------ |
 | []()                              | ------------------------------------ |
 | []()                              | ------------------------------------ |
@@ -73,3 +78,6 @@ image: ''
 
 
 # 书
+
+《Python编程：从入门到实践（第2版）》  
+《流畅的python》  
