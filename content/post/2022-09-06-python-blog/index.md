@@ -39,7 +39,7 @@ image: ''
 | [pandas官方网址](https://pandas.pydata.org/pandas-docs/stable/getting_started/comparison/comparison_with_r.html#compare-with-r) | pandas官网，对于其他编程语言爱好者非常友好，将Python的脚本与R中数据处理脚本进行对比  |
 | [Python库检索](https://pypi.org/) | 用于python库的查询、下载和发布  |
 | [Python内置函数](https://docs.python.org/zh-cn/3/library/functions.html) |   |
-| []()                        |   |
+| [动态规划问题(Dynamic Programming)](https://oi-wiki.org/dp/) |   |
 | []()                        |   |
 | []()                        |   |
 
