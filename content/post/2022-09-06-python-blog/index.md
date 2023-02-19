@@ -47,7 +47,7 @@ image: ''
 
 ### 常用package及其介绍
 
-主要应用：数值计算、数据可视化、Web开发、数据库管理、自动化运维、GUI编程、机器学习、深度学习、爬虫、图像处理、自然语言处理  
+主要应用：数值计算、数据可视化、Web开发、数据库管理、自动化运维、GUI编程、机器学习、深度学习、爬虫、图像处理、自然语言处理、[量化金融](https://space.bilibili.com/389455044/channel/series)
 [Python常用库整理](https://zhuanlan.zhihu.com/p/21563130)  
 [24个顶级Python库](https://zhuanlan.zhihu.com/p/76112940)  
 [15个Python库](https://zhuanlan.zhihu.com/p/469139128)  
