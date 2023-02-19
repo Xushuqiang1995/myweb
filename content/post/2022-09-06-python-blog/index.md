@@ -47,19 +47,46 @@ image: ''
 
 ### 常用package及其介绍
 
+主要应用：数值计算、数据可视化、Web开发、数据库管理、自动化运维、GUI编程、机器学习、深度学习、爬虫、图像处理、自然语言处理  
+[Python常用库整理](https://zhuanlan.zhihu.com/p/21563130)  
+[24个顶级Python库](https://zhuanlan.zhihu.com/p/76112940)  
+[15个Python库](https://zhuanlan.zhihu.com/p/469139128)  
+[]()  
+
 | 常用包                            | 用途介绍                             |
 |-----------------------------------|-------------------------------------|
 | [data.table](https://atrebas.github.io/post/2020-06-14-datatable-pandas/) | Python高效数据清理库 |
 | [Pyjanitor](https://blog.csdn.net/bf02jgtrs00xktcx/article/details/108067390) | 同R中janitor一样，用来更好地数据清理 |
-| [pandas]()                              | ------------------------------------ |
-| [numpy]()                              | ------------------------------------ |
-| [matploit]()                              | ------------------------------------ |
-| [os]()                              | ------------------------------------ |
-| [scikit learning]()                              | ------------------------------------ |
-| [unittest]()                              | Python单元测试库，python自带，不需要额外安装 |
-| []()                              | ------------------------------------ |
-| []()                              | ------------------------------------ |
-| []()                              | ------------------------------------ |
+| [numpy]()                              | [Numeric Python](https://zhuanlan.zhihu.com/p/382110229),Python数值计算的基石，主要内容有：快速高效的多维数组对象ndarray/基于元素的数学计算/硬盘中数据集的读写/线性代数、傅里叶变换等------------------------------------ |
+| [pandas]()                              | [Python Data Analysis](https://zhuanlan.zhihu.com/p/382110229),pandas提供了高级数据结构和函数，这些数据结构和函数的设计使得利用结构化、表格化数据的工作快速、简单、有表现力。------------------------------------ |
+| [PyOD]()                              | 异常值检测.[来源](https://zhuanlan.zhihu.com/p/76112940) |
+| [matplotlib]()                              | 数据可视化 |
+| [Seaborn]()                              | 数据可视化 |
+| [Geoplotlib]()                              | 地图数据可视化 |
+| [os]()                              | 获取操作系统相关信息 |
+| [Statmodels]()                              | Statsmodels库是Python中一个强大的统计分析库，包含假设检验、回归分析、时间序列分析等功能，能够很好的和Numpy和Pandas等库结合起来，提高工作效率。 |
+| [unittest](https://www.bilibili.com/video/BV1Sd4y1a7Us?p=36&vd_source=ded60bf71a923854104861c4f0757962) | Python单元测试库，python自带，不需要额外安装 |
+| [request]()                              | Request是用于网页分析的依赖库，常用方法为get() |
+| [Scrapy]()                              | 网络爬虫工作 |
+| [BeautifulSoup]()                              | 用于收集网站内容，Scrapy需要开发自己的‘爬虫’并通过命令操作，而BeautifulSoup只需将其功能导入计算机中并联机使用即可（request/scrapy优先） |
+| [Selenium]()                              | 设计初衷用于自动网站测试框架，但其用于网页数据抓取工具的效果极佳 |
+| [Scikit-learn]()                              | 机器学习框架，主要包含六大主要模块(数据预处理、维度缩减、数据回归、数据分类、数据聚类、模型选择) |
+| [Tensorflow]()                              | 相对高阶的机器学习库，底层使用C++语言编写，运行效率得到了保证；？？Tensorboard上的数据流图像功能最受欢迎，将数据学习流和结果进行了可视化处理； |
+| [PyTorch]()                              | Facebook发布的开源库，深度学习框架 |
+| [OpenCV]()                              | OpenCV提供了python应用接口 |
+| [Librosa]()                              | 音频和声音处理python库 |
+| [Django]()                              | 开发网页服务后端，网页开发框架；主要模块有([urls/views/models/forms/templates/admin/settings](https://www.jianshu.com/p/4302f5052b2e))------------------------------------ |
+| [Flask]()                              | python的轻量级网页开发框架------------------------------------ |
+| [Translators]()                              | 集成谷歌、必应、诱导、百度等多个翻译平台的API接口 |
+| [Scipy]()                              | [SciPy是科学计算领域针对不同标准问题域的包集合](https://zhuanlan.zhihu.com/p/382110229)，主要内容有scipy.integrate/scipy.linalg/scipy.optimize/scipy.signal/scipy.sparse/scipy.special/scipy.stats/；[在NumPy库的基础上增加了众多的数学、科学及工程计算中常用的库函数,如线性代数、常微分方程数值求解、信号处理、图像处理、稀疏矩阵等，可进行插值处理、信号滤波，以及使用C语言加速计算。](https://zhuanlan.zhihu.com/p/89477028) |
+| [Spacy]()                              | 非常有用且灵活的自然语言处理( NLP )库和框架，用于清理创建模型的文本文档。与类似用途的其他库相比，SpaCy速度更快。[来源](https://zhuanlan.zhihu.com/p/76112940) |
+| [missingno]()                              | 用图像的方式快速评估**数据缺失**的情况，可根据数据的完整度对数据进行排序或过滤，或者根据热度图或树状图对数据进行修正。 |
+| [XGBoost]()                              | XGBoost是专注于梯度提升算法的机器学习函数库；比起同样实现了梯度提升算法的Scikit-Learn库，其性能提升10倍以上。XGBoost可以处理回归、分类和排序等多种任务。 |
+| [Caffe]()                              | **Convolutional Architecture for Fast Feature Embedding**；是一个以表达式、速度和模块化为核心的深度学习框架，具备清晰、可读性高和快速的特性，在视频、图像处理方面应用较多。 |
+| [Keras]()                              | 高度模块化的神经网络库，使用Python实现；Keras**专精于深度学习**，其提供了到目前为止最方便的API |
+| [datetime]()                              | 日期和时间的操作库datetime |
+| [math]()                              | math库提供了数学常数和数学函数 |
+| [sys]()                              | 通常用于命令行参数的库sys |
 | []()                              | ------------------------------------ |
 | -----------------------------                                             | ------------------------------------ |
 
@@ -79,5 +106,6 @@ image: ''
 
 # 书
 
-《Python编程：从入门到实践（第2版）》  
-《流畅的python》  
+python基础：《Python编程：从入门到实践（第2版）》  
+python进阶：《流畅的python》  
+
